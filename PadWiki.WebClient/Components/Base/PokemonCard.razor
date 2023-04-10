@@ -1,0 +1,14 @@
+﻿@using PadWiki.WebClient.Enums
+
+
+<a href="" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+    <div class="poke-card" style="opacity: 1;">
+        <img alt="Card" height="279" src="@Image" width="200">
+    </div>
+</a>
+
+@code {
+    [Parameter] public string Tittle { get; set; }
+    [Parameter] public string Image { get; set; }
+    [Parameter] public string Description { get; set; }
+}

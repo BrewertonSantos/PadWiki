@@ -1,0 +1,33 @@
+﻿.poke-card {
+    width: 200px;
+    height: 276px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.poke-card:hover {
+    transform: translateY(-10px);
+    z-index: 2;
+}
+
+.poke-card img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: slide-in 1s ease-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
