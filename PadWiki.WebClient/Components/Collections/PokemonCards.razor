@@ -2,40 +2,7 @@
 @using PadWiki.WebClient.Services.Contracts
 @inject IPokemonCardsService PokemonCardsService
 
-<h3>PokemonCards</h3>
-<div class="row">
-    <div class="col-6">
-        <ul class="pagination">
-            <li class="page-item">
-                <div class="form-outline mb-4">
-                    <div class="form-outline">
-                        <div id="select-wrapper-773617" class="select-wrapper">
-                            <div class="form-outline">
-                                <input class="form-control select-input active focused" type="text" role="listbox" aria-multiselectable="false" aria-disabled="false" aria-haspopup="true" aria-expanded="false" readonly="true"><label class="form-label select-label active" style="margin-left: 0px;">Example label</label><span class="select-arrow"></span>
-                                <div class="form-notch">
-                                    <div class="form-notch-leading" style="width: 9px;"></div>
-                                    <div class="form-notch-middle" style="width: 87.2px;"></div>
-                                    <div class="form-notch-trailing"></div>
-                                </div>
-                                <div class="form-label select-fake-value"></div>
-                            </div>
-                            @* <select class="select select-initialized"> *@
-                            @*     <option value="1">One</option> *@
-                            @*     <option value="2">Two</option> *@
-                            @*     <option value="3">Three</option> *@
-                            @*     <option value="4">Four</option> *@
-                            @*     <option value="5">Five</option> *@
-                            @* </select> *@
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="col-6">
-        <Pagination Count="PokemonCardsService.Cards.Count"/>
-    </div>
-</div>
+<Pagination Count="PokemonCardsService.Cards.Count"/>
 
 <ul class="d-flex flex-wrap justify-content-between" style="padding-left: initial;" id="cardResults">
     @foreach (var card in PokemonCardsService.Cards)
