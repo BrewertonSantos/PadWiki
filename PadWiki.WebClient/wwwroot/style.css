@@ -1,0 +1,146 @@
+﻿.badge-card-normal {
+    background-image: url(lib/images/badges/rarity-badges.png);
+    background-position: 137px 91px;
+    width: 45px;
+    height: 45px;
+}
+
+.badge-card-rare {
+    background-image: url(lib/images/badges/rarity-badges.png);
+    background-position: 91px 91px;
+    width: 45px;
+    height: 45px;
+}
+
+.badge-card-very-rare {
+    background-image: url(lib/images/badges/rarity-badges.png);
+    background-position: 46px 91px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-bug {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 52px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-dark {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 149px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-dragon {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 197px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-electric {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 149px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-fairy {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 52px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-fighting {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 593px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-fire {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: -56px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-flying {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 149px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-ghost {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: -56px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-grass {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 100px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-ground {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 197px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-ice {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 52px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-normal {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 593px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-poison {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: -56px -51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-psychic {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 100px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-rock {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 593px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-steel {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 100px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-water {
+    background-image: url(lib/images/icons/pokemon-energies.png);
+    background-position: 197px -5px;
+    width: 45px;
+    height: 45px;
+}
