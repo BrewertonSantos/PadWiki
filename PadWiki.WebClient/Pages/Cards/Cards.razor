@@ -1,11 +1,32 @@
 ﻿@page "/cards"
+@using PadWiki.WebClient.Services
+@inject IJSRuntime JS
+@inject LocalizationService LocalizationService
 
 <PageTitle>Pokemon Cards</PageTitle>
 
-@* <div class="form-check form-check-inline"> *@
-@*     <input class="form-check-input rounded-circle" type="checkbox" value="" id="defaultCheck1"> *@
-@*     <label class="form-check-label rounded-circle" for="defaultCheck1">Opção 1</label> *@
-@* </div> *@
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <img id="cardImage" alt="Card" height="279" width="200">
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="modal-header">
+                    <h2 id="pokemonName"></h2>
+                    <span id="closeModal" @onclick="CloseModal" class="close">&times;</span>
+                </div>
+                <div class="vertical-light-divider"/>
+                <div class="modal-body">
+                    <p id="cardDescription"></p>
+                    <p id="cardRarity"></p>
+                    @LocalizationService.GetLocalizedHtml("CanBeObteinedBy")
+                    <p id="cardDropRate"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <PokemonCards/>
 
@@ -14,6 +35,16 @@
     public void OnInitialized()
     {
         Console.WriteLine("OnInitialized");
+    }
+
+    private async Task OpenModal()
+    {
+        await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'block';");
+    }
+
+    private async Task CloseModal()
+    {
+        await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'none';");
     }
 
 }

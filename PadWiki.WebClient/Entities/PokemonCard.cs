@@ -7,7 +7,7 @@ public class PokemonCard : Entity
     // Required Parameters
     public int Index { get; set; }
     public string ImagePath { get; set; } = null!;
-    public string Tittle { get; set; } = null!;
+    public string Title { get; set; } = null!;
 
     // Optional Parameters
     public ECardRarity CardRarity { get; set; } = ECardRarity.Unavailable;
@@ -21,7 +21,7 @@ public class PokemonCard : Entity
     public PokemonCard(
         int index,
         string imagePath,
-        string tittle,
+        string title,
         ECardRarity cardRarity = ECardRarity.Unavailable,
         string description = "Unknown",
         EDropRarity dropRarity = EDropRarity.Unavailable,
@@ -29,9 +29,9 @@ public class PokemonCard : Entity
     {
         Index = index;
         ImagePath = imagePath;
-        Tittle = tittle;
+        Title = title;
 
-        CardRarity = ECardRarity.Unavailable;
+        CardRarity = cardRarity;
         Description = description;
         DropRarity = dropRarity;
         RequiredLevel = requiredLevel;

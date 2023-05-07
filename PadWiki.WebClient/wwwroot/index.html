@@ -9,7 +9,6 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/animations/default-animations.css" rel="stylesheet"/>
     <link href="css/app.css" rel="stylesheet"/>
-    <link href="style.css" rel="stylesheet"/>
     <link href="manifest.json" rel="manifest"/>
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png"/>
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png"/>
@@ -25,6 +24,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
             rel="stylesheet"
     />
+    <link href="style.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -42,6 +42,19 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
 ></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("closeModal").onclick = function() {
+            document.getElementById("modal").style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        };
+    });
+</script>
 </body>
 
 </html>
