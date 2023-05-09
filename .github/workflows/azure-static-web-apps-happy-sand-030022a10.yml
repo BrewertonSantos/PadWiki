@@ -15,22 +15,27 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
         with:
-          submodules: true
-      - name: Build And Deploy
-        id: builddeploy
+          dotnet-version: 6.0.x
+      
+      - name: Restore dependencies
+        run: dotnet restore ./PadWiki.WebClient/
+      
+      - name: Publish the application
+        run: dotnet publish --configuration Release --output ./PadWiki.WebClient/ ./PadWikiWebClient/PadWiki.WebClient.csproj
+      
+      - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_SAND_030022A10 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "./PadWiki.WebClient/" # App source code path
-          api_location: "Api" # Api source code path - optional
-          output_location: "wwwroot" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
+          app_location: "./PadWiki.WebClient/wwwroot"
+          output_location: "./PadWiki.WebClient/wwwroot"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
