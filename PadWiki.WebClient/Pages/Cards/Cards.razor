@@ -1,7 +1,6 @@
 ﻿@page "/cards"
 @using PadWiki.WebClient.Services
 @inject IJSRuntime JS
-@inject LocalizationService LocalizationService
 
 <PageTitle>Pokemon Cards</PageTitle>
 
@@ -20,7 +19,7 @@
                 <div class="modal-body">
                     <p id="cardDescription"></p>
                     <p id="cardRarity"></p>
-                    @LocalizationService.GetLocalizedHtml("CanBeObteinedBy")
+                        CanBeObteinedBy
                     <p id="cardDropRate"></p>
                 </div>
             </div>
@@ -32,19 +31,10 @@
 
 @code {
 
-    public void OnInitialized()
-    {
-        Console.WriteLine("OnInitialized");
-    }
-
     private async Task OpenModal()
-    {
-        await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'block';");
-    }
+        => await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'block';");
 
     private async Task CloseModal()
-    {
-        await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'none';");
-    }
+        => await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'none';");
 
 }
