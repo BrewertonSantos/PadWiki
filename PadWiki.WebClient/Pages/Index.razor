@@ -1,9 +1,146 @@
 ﻿@page "/"
+@using PadWiki.WebClient.Entities
+@using Humanizer
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<head>
+    <link href="css/random-cards.css" rel="stylesheet"/>
+</head>
 
-Welcome to your new app.
+<div class="random-card-html mx-n4" style="background-image: url('https://i.imgur.com/gHWfK1Z.jpg');">
+    <div @ref="_scrollContainer" class="random-card-body">
+        <div class="scrolling-wrapper">
+            @foreach (var card in _cards)
+            {
+                <a class="random-card p-3" href="@card.CallbackUrl" target="_blank" style="transition: transform 2s; transform: @RandomRotate();">
+                    <img class="mb-3" src="@card.BackgroundImage"/>
+                    <h5 class="text-center">@card.Tittle</h5>
+                    <p>@card.Description</p>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                    <p>
+                        <small>@CalculateElapsedTime(card.CreateDate)</small>
+                    </p>
+                </a>
+            }
+        </div>
+        <div class="cover">
+            <div class="d-flex align-items-center justify-content-center" style="height: inherit; margin-left: -15px;">
+                <button class="btn btn-primary btn-floating" type="button" @onclick="ScrollLeft" disabled="@disableScrollLeftButton">
+                    <i class="fas fa-angles-left fa-2x"></i>
+                </button>
+            </div>
+            <div class="d-flex align-items-center justify-content-center carroussel-right-control" style="height: inherit; margin-right: -15px;">
+                <button class="btn btn-primary btn-floating" type="button" @onclick="ScrollRight" disabled="@disableScrollRightButton">
+                    <i class="fas fa-angles-right fa-2x"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<DefaultQuote></DefaultQuote>
+
+<DefaultFooter></DefaultFooter>
+
+@code {
+    private List<Card> _cards = new(12);
+    private ElementReference _scrollContainer;
+    private bool disableScrollLeftButton = true;
+    private bool disableScrollRightButton = false;
+
+    [JSInvokable]
+    public void HandleScroll(bool isAtStart, bool isAtEnd)
+    {
+        disableScrollLeftButton = isAtStart;
+        disableScrollRightButton = isAtEnd;
+        StateHasChanged(); // force the UI to update
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await JSRuntime.InvokeVoidAsync("addScrollListener", _scrollContainer, DotNetObjectReference.Create(this));
+    }
+
+    private async Task ScrollLeft()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollElement", _scrollContainer, -300, 0);
+        disableScrollLeftButton = await JSRuntime.InvokeAsync<bool>("isScrollAtStart", _scrollContainer);
+    }
+
+    private async Task ScrollRight()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollElement", _scrollContainer, 300, 0);
+        disableScrollRightButton = await JSRuntime.InvokeAsync<bool>("isScrollAtEnd", _scrollContainer);
+    }
+
+    protected override void OnInitialized()
+    {
+        _cards.Add(new(
+            callbackUrl: "http://forum.padventures.org/index.php?threads/digital-drawing-contest.45729/",
+            createDate: new DateTime(2023, 4, 26, 20, 53, 0),
+            endDate: new DateTime(2023, 5, 31, 18, 0, 0),
+            description: "All submissions must be received by the deadline of May 31st, 2023.",
+            "Digital Drawing Contest",
+            "https://cdn.discordapp.com/attachments/787307097855361045/1100867746230702181/drawing.png"));
+
+        _cards.Add(new(
+            callbackUrl: "http://forum.padventures.org/index.php?threads/easter-event-2023-donation-promotion-battle-pass-higher-rates.45708/",
+            createDate: new DateTime(2023, 4, 4, 16, 40, 0),
+            endDate: new DateTime(2023, 4, 19, 18, 0, 0),
+            description: "Finizen/Shiny Finizen, donation promo, battle pass, and high rates from April 4th to April 19th.",
+            tittle: "Triple Easter Event",
+            backgroundImage: "https://i.imgur.com/iRdtBLT.png"));
+
+        _cards.Add(new Card(
+            callbackUrl: "http://forum.padventures.org/index.php?threads/valentine-event-2023-donation-promotion-battle-pass-higher-rates.45657/",
+            createDate: new DateTime(2023, 2, 11, 3, 14, 0),
+            endDate: new DateTime(2023, 2, 25, 18, 0, 0),
+            description: "Tinkaton, Iron Valiant, Hisuian Lilligant (and your shinies). Battle pass, high rates and donation promo from february 11th to february 25th.",
+            tittle: "Triple Valentine Event 2023",
+            backgroundImage: "https://i.imgur.com/5q16G9c.png"));
+
+        _cards.Add(new(
+            callbackUrl: "http://forum.padventures.org/index.php?threads/digital-drawing-contest.45729/",
+            createDate: new DateTime(2022, 12, 24, 21, 3, 0),
+            endDate: new DateTime(2023, 1, 5, 18, 0, 0),
+            description: "Coalossal, Wyrdeer, Iron Bundle, Scream Tail, Hisuian Avalugg, Glastrier (and your shinies). high rates and donation promo from december 21th to january 05th.",
+            "Triple Christmas Event 2022",
+            "https://cdn.discordapp.com/attachments/759537438665605181/911979213714780190/eventchristmas.png"));
+        
+        _cards.Add(new(
+            callbackUrl: "http://forum.padventures.org/index.php?threads/birthday-event-donation-promotion-higher-rates.45556/",
+            createDate: new DateTime(2022, 11, 15, 16, 1, 0),
+            endDate: new DateTime(2022, 11, 25, 18, 0, 0),
+            description: "Toxtricity (2 different forms), Gigantamax Alcremie, Grapploct/Shiny Grapploct. high catch and high exp rates and donation promo from november 18th to november 25th.",
+            "Triple 12th Birthday Event",
+            "https://cdn.discordapp.com/attachments/787307097855361045/1035592989755592744/banneruro2.png"));
+    }
+
+    private static string CalculateElapsedTime(DateTime dataInicial)
+    {
+        var dif = DateTime.Now - dataInicial;
+        var humanizedDifference = dif.Humanize(2, maxUnit: Humanizer.Localisation.TimeUnit.Day, minUnit: Humanizer.Localisation.TimeUnit.Hour, collectionSeparator: " and ");
+        return $"{humanizedDifference} ago";
+    }
+
+    private string RandomRotate()
+    {
+        var random = new Random();
+        var deg = random.Next(-5, 6);
+        return $"rotate({deg}deg)";
+    }
+
+    private string MakeText()
+    {
+        string lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad repellendus pariatur eligendi tempora praesentium tenetur";
+        var loremArray = lorem.Split(' ');
+        var random = new Random();
+        var amountOfText = random.Next(10, 31); // O segundo parâmetro é exclusivo, então precisamos adicionar 1 para incluir 30.
+        var text = loremArray.Take(amountOfText);
+        return string.Join(' ', text) + ".";
+    }
+
+}
