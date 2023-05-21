@@ -1,0 +1,87 @@
+﻿@using PadWiki.WebClient.Services.Contracts
+@using PadWiki.WebClient.Entities
+@using Humanizer
+@inject IPokemonCharmsService PokemonCharmsService
+
+<div class="row w-100">
+    <div class="col-2">
+        <div
+            class="nav flex-column nav-tabs text-center"
+            id="v-tabs-tab"
+            role="tablist"
+            aria-orientation="vertical">
+            @foreach (var charm in PokemonCharmsService.Charms)
+            {
+                <a
+                    class="nav-link"
+                    id="v-tabs-@charm.Name.Kebaberize()-tab"
+                    data-mdb-toggle="tab"
+                    href="#v-tabs-@charm.Name.Kebaberize()"
+                    role="tab"
+                    aria-controls="v-tabs-@charm.Name.Kebaberize()"
+                    aria-selected="true">
+                    <div class="d-inline-flex position-relative">
+                        <img src="@charm.ImageUrl" alt="Avatar" style="width: 50px; height: 50px;">
+                    </div>
+                    <br/>
+                    @charm.Name
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="col-10">
+        <div class="tab-content" id="v-tabs-tabContent">
+            @foreach (var charm in PokemonCharmsService.Charms)
+            {
+                <div
+                    class="tab-pane fade show"
+                    id="v-tabs-@charm.Name.Kebaberize()"
+                    role="tabpanel"
+                    aria-labelledby="v-tabs-@charm.Name.Kebaberize()-tab">
+                    
+                    <ul class="nav nav-tabs mb-3" id="ex-with-icons" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#ex-with-icons-tabs-1" role="tab"
+                               aria-controls="ex-with-icons-tabs-1" aria-selected="true">
+                                <i class="fas fa-dice-one fa-fw me-2"></i>Level 1
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+                               aria-controls="ex-with-icons-tabs-2" aria-selected="false">
+                                <i class="fas fa-dice-two fa-fw me-2"></i>Level 2
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="ex-with-icons-tab-3" data-mdb-toggle="tab" href="#ex-with-icons-tabs-3" role="tab"
+                               aria-controls="ex-with-icons-tabs-3" aria-selected="false">
+                                <i class="fas fa-dice-three fa-fw me-2"></i>Level 3
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Tabs navs -->
+
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="ex-with-icons-content">
+                        <div class="tab-pane fade show active " id="ex-with-icons-tabs-1" role="tabpanel" aria-labelledby="ex-with-icons-tab-1">
+                            Tab 1 content
+                        </div>
+                        <div class="tab-pane fade" id="ex-with-icons-tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
+                            Tab 2 content
+                        </div>
+                        <div class="tab-pane fade" id="ex-with-icons-tabs-3" role="tabpanel" aria-labelledby="ex-with-icons-tab-3">
+                            Tab 3 content
+                        </div>
+                    </div>
+                    <!-- Tabs content -->
+                    @charm.Name content
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

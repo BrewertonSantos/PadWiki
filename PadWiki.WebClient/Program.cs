@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Localization;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddSingleton<IPokemonCardsService, PokemonCardsService>();
+builder.Services.AddSingleton<IPokemonCharmsService, PokemonCharmsService>();
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
