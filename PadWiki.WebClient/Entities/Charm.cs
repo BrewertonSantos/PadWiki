@@ -6,31 +6,46 @@ public class Charm : Entity
 {
     // Public Constructors
     public Charm(
+        int firstLevelFirstBoost,
+        int firstLevelSecondBoost,
+        int firstLeveThirdBoost,
+        int SecondLevelFirstBoost,
+        int SecondLevelSecondBoost,
+        int SecondLeveThirdBoost,
+        int ThirdLevelFirstBoost,
+        int ThirdLevelSecondBoost,
+        int ThirdLeveThirdBoost,
         string name,
-        int taskLevel,
-        string boostInfo = "",
         string description = "",
         string imageUrl = "",
-        string pvpBehavior = "",
-        string usageInfo = "")
+        int pveCooldownInSeconds = 0,
+        int pvpCooldownInSeconds = 0,
+        string usageInfo = "",
+        bool worksInPve = true,
+        bool worksInPvp = false)
     {
+        FirstLevel = new(firstLevelFirstBoost, firstLevelSecondBoost, firstLeveThirdBoost);
+        
         Name = name;
-        TaskLevel = taskLevel;
-        BoostInfo = boostInfo;
         Description = description;
         ImageUrl = imageUrl;
-        PvpBehavior = pvpBehavior;
+        PveCooldownInSeconds = pveCooldownInSeconds;
+        PvpCooldownInSeconds = pvpCooldownInSeconds;
         UsageInfo = usageInfo;
+        WorksInPve = worksInPve;
+        WorksInPvp = worksInPvp;
     }
 
     // Required Parameters
+    public CharmLevel FirstLevel { get; set; }
     public string Name { get; private set; }
-    public int TaskLevel { get; private set; }
-    
+
     // Optional Parameters
-    public string BoostInfo { get; private set; }
     public string Description { get; private set; }
     public string ImageUrl { get; private set; }
-    public string PvpBehavior { get; private set; }
+    public int PveCooldownInSeconds { get; private set; }
+    public int PvpCooldownInSeconds { get; private set; }
     public string UsageInfo { get; private set; }
+    public bool WorksInPve { get; private set; }
+    public bool WorksInPvp { get; private set; }
 }
