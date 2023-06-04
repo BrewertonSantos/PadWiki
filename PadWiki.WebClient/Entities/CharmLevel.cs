@@ -2,11 +2,18 @@
 
 public class CharmLevel
 {
-    public CharmLevelUpgrade FirstCharmUpgrade { get; private set; }
-    public CharmLevelUpgrade SecondCharmUpgrade { get; private set; }
-    public CharmLevelUpgrade ThirdCharmUpgrade { get; private set; }
+    private int FirstCharmUpgrade { get; }
+    private int SecondCharmUpgrade { get; }
+    private int ThirdCharmUpgrade { get; }
 
-    public CharmLevel(int firstLevelFirstBoost, int firstLevelSecondBoost, int firstLeveThirdBoost)
-    {
-    }
+    public CharmLevel(int firstCharmUpgrade, int secondCharmUpgrade, int thirdCharmUpgrade)
+        => (FirstCharmUpgrade, SecondCharmUpgrade, ThirdCharmUpgrade) =
+            (firstCharmUpgrade, secondCharmUpgrade, thirdCharmUpgrade);
+
+    public static implicit operator string?(CharmLevel charmLevel) =>
+        (charmLevel.FirstCharmUpgrade, charmLevel.SecondCharmUpgrade, charmLevel.ThirdCharmUpgrade) switch
+        {
+            (0, 0, 0) => null,
+            var (first, second, third) => $"{first}% | {second}% | {third}%"
+        };
 }

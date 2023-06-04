@@ -1,7 +1,14 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-html, body {
+html, body, #app, .page, main {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-bg {
+    background-image: url('https://padventures.org/templates/padventures/images/main_bg.png');
 }
 
 h1:focus {

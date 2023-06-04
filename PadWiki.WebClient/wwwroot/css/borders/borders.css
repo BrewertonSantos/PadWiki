@@ -1,0 +1,6 @@
+﻿.green-faded {
+    border-radius: 10px;
+    border: 3px solid;
+    border-image-slice: 1;
+    background-image: linear-gradient(to right, rgba(107, 163, 147, 0.2), rgba(255, 209, 148, 0.2));
+}

@@ -3,51 +3,66 @@
 @using Humanizer
 @inject IPokemonCharmsService PokemonCharmsService
 
-<div class="row w-100">
-    <div class="col-2">
-        <div
-            class="nav flex-column nav-tabs text-center"
-            id="v-tabs-tab"
-            role="tablist"
-            aria-orientation="vertical">
-            @foreach (var charm in PokemonCharmsService.Charms)
-            {
-                <a
-                    class="nav-link"
-                    id="v-tabs-@charm.Name.Kebaberize()-tab"
-                    data-mdb-toggle="tab"
-                    href="#v-tabs-@charm.Name.Kebaberize()"
-                    role="tab"
-                    aria-controls="v-tabs-@charm.Name.Kebaberize()"
-                    aria-selected="true">
-                    <div class="d-inline-flex position-relative">
-                        <img src="@charm.ImageUrl" alt="Avatar" style="width: 50px; height: 50px;">
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+    <tr>
+        <th></th>
+        <th>Usage Info</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Position</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var charm in PokemonCharmsService.Charms)
+    {
+        <tr>
+            <td>
+                <div class="d-flex align-items-center">
+                    <img
+                        src="@charm.ImageUrl"
+                        class="rounded-circle"
+                        alt="@charm.Name.Kebaberize()"
+                        style="width: 45px; height: 45px"/>
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">@charm.Name</p>
+                        <p class="text-muted mb-0">@charm.Description</p>
                     </div>
-                    <br/>
-                    @charm.Name
-                </a>
-            }
-        </div>
-    </div>
-
-    <div class="col-10">
-        <div class="tab-content" id="v-tabs-tabContent">
-            @foreach (var charm in PokemonCharmsService.Charms)
-            {
-                <div
-                    class="tab-pane fade show"
-                    id="v-tabs-@charm.Name.Kebaberize()"
-                    role="tabpanel"
-                    aria-labelledby="v-tabs-@charm.Name.Kebaberize()-tab">
-                    <h1>@charm.Name</h1>
-                    <h4>@charm.Description</h4>
-                    <hr/>
-                    <i class="fas fa-dice-three fa-fw me-2"/>
                 </div>
-            }
-        </div>
-    </div>
-</div>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">@charm.UsageInfo</p>
+            </td>
+            <td>
+                @if (charm.FirstLevel is not null)
+                {
+                    <p class="badge badge-success rounded-pill d-inline-block">
+                        <i class="fas fa-dice-one fa-fw me-2"/> @charm.FirstLevel
+                    </p>
+                }
+                <br>
+                <span class="badge badge-warning rounded-pill d-inline-block">
+                    <i class="fas fa-dice-two fa-fw me-2"/> @charm.SecondLevel
+                </span>
+                <br>
+                <span class="badge badge-danger rounded-pill d-inline-block">
+                    <i class="fas fa-dice-three fa-fw me-2"/> @charm.ThirdLevel
+                </span>
+            </td>
+            <td></td>
+            <td>
+                <button
+                    type="button"
+                    class="btn btn-link btn-rounded btn-sm fw-bold"
+                    data-mdb-ripple-color="dark">
+                    Edit
+                </button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
 
 @code {
 
