@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PadWiki.WebClient", "PadWiki.WebClient\PadWiki.WebClient.csproj", "{1822045F-D997-4F74-9C22-EBF1CB590DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PadWiki.WebClient", "PadWiki.WebClient\PadWiki.WebClient.csproj", "{1822045F-D997-4F74-9C22-EBF1CB590DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PadWiki.WebApp", "PadWiki.WebApp\PadWiki.WebApp.csproj", "{73EBFB2B-0192-46F9-962E-37C3437EC563}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1822045F-D997-4F74-9C22-EBF1CB590DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1822045F-D997-4F74-9C22-EBF1CB590DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1822045F-D997-4F74-9C22-EBF1CB590DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73EBFB2B-0192-46F9-962E-37C3437EC563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EBFB2B-0192-46F9-962E-37C3437EC563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EBFB2B-0192-46F9-962E-37C3437EC563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EBFB2B-0192-46F9-962E-37C3437EC563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

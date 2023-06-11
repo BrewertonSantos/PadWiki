@@ -1,0 +1,71 @@
+﻿@using System.Globalization
+@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@inject IStringLocalizer<CultureSelector> Localizer
+
+<MudMenu Label="@GetFriendlyLanguageName(@cultureValue.Name)" Dense="false">
+    @foreach (var culture in supportedCultures)
+    {
+        <MudMenuItem>
+            <MudItem Style="display: flex; align-items: center;">
+                <MudImage Alt="flag" Src="@($"media/images/flags/{culture.Name}.svg")" Height="14" Style="vertical-align: middle;"/>
+                <MudText class="mx-5">@GetFriendlyLanguageName(culture.Name)</MudText>
+            </MudItem>
+        </MudMenuItem>
+    }
+</MudMenu>
+
+@code
+{
+    private CultureInfo cultureValue { get; set; } = CultureInfo.CurrentCulture;
+    private Func<CultureInfo, string> convertFunc = ci => ci?.DisplayName;
+
+    private List<CultureInfo> supportedCultures = new()
+    {
+        CultureInfo.GetCultureInfo("en-US"),
+        CultureInfo.GetCultureInfo("es-MX"),
+        CultureInfo.GetCultureInfo("pl-PL"),
+        CultureInfo.GetCultureInfo("pt-BR"),
+        CultureInfo.GetCultureInfo("pt-PT"),
+        CultureInfo.GetCultureInfo("ru-RU")
+    };
+
+    private CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var js = (IJSInProcessRuntime)JS;
+                js.InvokeVoid("blazorCulture.set", value.Name);
+
+                Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+            }
+        }
+    }
+
+    private string GetFriendlyLanguageName(string cultureName)
+    {
+    // Mapear as culturas para os nomes amigáveis correspondentes
+        var languageNames = new Dictionary<string, string>
+        {
+            { "en-US", "English" },
+            { "es-MX", "Mexico" },
+            { "pl-PL", "Poland" },
+            { "pt-BR", "Brazil" },
+            { "pt-PT", "Portugal" },
+            { "ru-RU", "Russia" }
+    // Outras culturas suportadas
+        };
+
+        if (languageNames.ContainsKey(cultureName))
+        {
+            return languageNames[cultureName];
+        }
+        else
+        {
+            return cultureName; // Retorna a sigla da cultura caso o nome amigável não esteja mapeado
+        }
+    }
+}

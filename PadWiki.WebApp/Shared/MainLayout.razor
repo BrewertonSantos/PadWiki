@@ -1,0 +1,81 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_themeManager.Theme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar Class="d-flex flex-grow-1 gap-4" Elevation="0" Style="background: linear-gradient(to right, #6ba393, #ffd194);">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.End" OnClick="@((e) => DrawerToggle())"/>
+        <MudSpacer/>
+        <MudItem Class="align-self-center"><CultureSelector/></MudItem>
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">PadWiki.WebApp</MudText>
+        </MudDrawerHeader>
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+    <MudThemeManagerButton OnClick="@((e) => OpenThemeManager(true))"/>
+    <MudThemeManager Open="_themeManagerOpen" OpenChanged="OpenThemeManager" Theme="_themeManager" ThemeChanged="UpdateTheme"/>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle() => _drawerOpen = !_drawerOpen;
+
+    private ThemeManagerTheme _themeManager = new()
+    {
+        Theme = new()
+        {
+            Palette = new()
+            {
+                Primary = "#6ba393",
+                Secondary = "#ffd194",
+                Tertiary = "#008080",
+                Info = "#40E0D0",
+                Success = "#008000",
+                Warning = "#FF8C00",
+                Error = "#FF0000",
+                Surface = "#FFF",
+                TextPrimary = "#000000"
+            },
+            PaletteDark = new()
+            {
+                Primary = "#6ba393",
+                Secondary = "#ffd194",
+                Tertiary = "#008080",
+                Info = "#40E0D0",
+                Success = "#008000",
+                Warning = "#FF8C00",
+                Error = "#FF0000",
+                Surface = "#222222",
+                TextPrimary = "#FFFFFF"
+            }
+        }
+    };
+
+    private bool _isDarkMode;
+    public bool _themeManagerOpen = false;
+
+    void OpenThemeManager(bool value) => _themeManagerOpen = value;
+
+    void UpdateTheme(ThemeManagerTheme value)
+    {
+        _themeManager = value;
+        StateHasChanged();
+        _themeManager.Theme.Palette.Primary = "#6ba393";
+    }
+
+    protected override void OnInitialized()
+    {
+        StateHasChanged();
+    }
+
+}
