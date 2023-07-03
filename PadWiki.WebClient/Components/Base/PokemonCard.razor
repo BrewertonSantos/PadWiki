@@ -8,12 +8,22 @@
 </a>
 
 @code {
-    [Parameter] public string Title { get; set; }
-    [Parameter] public string Image { get; set; }
-    [Parameter] public string Description { get; set; }
-    [Parameter] public ECardRarity CardRarity { get; set; }
-    [Parameter] public EDropRarity CardDropRate { get; set; }
-    
+
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Image { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Description { get; set; } = string.Empty;
+
+    [Parameter]
+    public ECardRarity CardRarity { get; set; }
+
+    [Parameter]
+    public EDropRarity CardDropRate { get; set; }
+
     private async Task OpenModal()
     {
         await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'block';");
@@ -28,4 +38,5 @@
     {
         await JS.InvokeVoidAsync("eval", "document.getElementById('modal').style.display = 'none';");
     }
+
 }

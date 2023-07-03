@@ -1,0 +1,16 @@
+﻿using PadWiki.WebApp.Entities;
+
+namespace PadWiki.WebApp.Services.Contracts;
+
+/// <summary>
+/// Defines the basic structure for a service that manages a collection of Pokémon charms.
+/// </summary>
+public interface ICharmService
+{
+    List<Charm> Charms { get; set; }
+    
+    /// <summary>
+    /// Responsible for populating the Pokémon charms list with existing charms.
+    /// </summary>
+    void PopulatePokemonCharms();
+}

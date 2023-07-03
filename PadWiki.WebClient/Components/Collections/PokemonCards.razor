@@ -1,10 +1,10 @@
 ﻿@using PadWiki.WebClient.Services.Contracts
-@inject IPokemonCardsService PokemonCardsService
+@inject ICardService CardService
 
-<Pagination Count="PokemonCardsService.Cards.Count"/>
+<Pagination Count="CardService.Cards.Count"/>
 
 <ul class="d-flex flex-wrap justify-content-between" style="padding-left: initial;" id="cardResults">
-    @foreach (var card in PokemonCardsService.Cards)
+    @foreach (var card in CardService.Cards)
     {
         <li class="poke-card m-2">
             <PokemonCard Image="@card.ImagePath" Title="@card.Title" Description="@card.Description" CardRarity="card.CardRarity" CardDropRate="card.DropRarity"/>
@@ -12,13 +12,7 @@
     }
 </ul>
 
-<Pagination Count="PokemonCardsService.Cards.Count"/>
+<Pagination Count="CardService.Cards.Count"/>
 
 @code {
-
-    public void OnInitialized()
-    {
-        Console.WriteLine("OnInitialized");
-    }
-
 }
