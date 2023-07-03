@@ -35,10 +35,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedResources.pt-BR.rsx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Data\Globalization\Shared\SharedResources.es-ES.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SharedResources.es-ES.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Data\Globalization\Shared\SharedResources.pl-PL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedResources.pl-PL.Designer.cs</LastGenOutput>
@@ -55,11 +51,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SharedResources.pt-BR.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Globalization\Shared\SharedResources.es-ES.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SharedResources.es-ES.resx</DependentUpon>
     </Compile>
     <Compile Update="Data\Globalization\Shared\SharedResources.pl-PL.Designer.cs">
       <DesignTime>True</DesignTime>

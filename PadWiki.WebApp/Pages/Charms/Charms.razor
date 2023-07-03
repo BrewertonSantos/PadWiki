@@ -1,0 +1,84 @@
+﻿@page "/charms"
+@using Entities
+@using Humanizer
+@using PadWiki.WebApp.Extensions
+@using PadWiki.WebApp.Resources
+@using PadWiki.WebApp.Services.Contracts
+@inject ICharmService _charmService
+
+<MudPaper Height="100%" Style="overflow: scroll;">
+    <MudContainer Class="pa-5" Fixed="true">
+        <MudTable Class="text-center" Items="@Elements" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
+            <ToolBarContent>
+                <MudSwitch @bind-Checked="@bordered" Color="Color.Tertiary">@Resources.Bordered</MudSwitch>
+                <MudSwitch @bind-Checked="@dense" Color="Color.Primary">@Resources.Dense</MudSwitch>
+                <MudSwitch @bind-Checked="@hover" Color="Color.Warning">@Resources.Hover</MudSwitch>
+                <MudSwitch @bind-Checked="@striped" Color="Color.Secondary">@Resources.Striped</MudSwitch>
+                <MudSpacer/>
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh></MudTh>
+                <MudTh Style="text-align: center; font-weight: bold;">@Resources.Name</MudTh>
+                <MudTh Style="text-align: center; font-weight: bold;">@Resources.Description</MudTh>
+                <MudTh Style="text-align: center; font-weight: bold;">@Resources.UsageInfo</MudTh>
+                <MudTh Style="text-align: center; font-weight: bold;">@Resources.Cooldown</MudTh>
+                <MudTh Style="text-align: center; font-weight: bold;">@Resources.WorksOn</MudTh>
+                <MudTh Style="text-align: center; font-weight: bold;">@Resources.BoostStages</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="">
+                    <MudImage Src="@context.ImageUrl" Alt="@context.Name.Kebaberize()"></MudImage>
+                </MudTd>
+                <MudTd DataLabel="Sign">@context.Name</MudTd>
+                <MudTd DataLabel="Name">@context.Description</MudTd>
+                <MudTd DataLabel="Usage info">
+                    @context.UsageInfo
+                </MudTd>
+                <MudTd DataLabel="Cooldown" Style="text-align: center;">
+                    @if (context.PveCooldownInSeconds > 0)
+                    {
+                        <MudChip Icon="@Icons.Material.Filled.AvTimer" Color="Color.Transparent" Size="Size.Small">@(context.PveCooldownInSeconds)s @Dictionary.PvE</MudChip>
+                        <br/>
+                    }
+                    @if (context.PvpCooldownInSeconds > 0)
+                    {
+                        <MudChip Icon="@Icons.Material.Filled.AvTimer" Color="Color.Transparent" Size="Size.Small">@(context.PvpCooldownInSeconds)s @Dictionary.PvP</MudChip>
+                    }
+                </MudTd>
+                <MudTd DataLabel="Works On" Style="text-align: center;">
+                    <MudChip Color="Color.Transparent" Size="Size.Small">@context.WorksOn.GetDescription()</MudChip>
+                </MudTd>
+                <MudTd DataLabel="Boost stages">
+                    @if (context.FirstLevel is not null && !string.IsNullOrEmpty(context.FirstLevel))
+                    {
+                        <MudChip Icon="@Icons.Material.Filled.LooksOne" Color="Color.Secondary" Size="Size.Small">@context.FirstLevel</MudChip>
+                        <br/>
+                    }
+                    @if (context.SecondLevel is not null && !string.IsNullOrEmpty(context.SecondLevel))
+                    {
+                        <MudChip Icon="@Icons.Material.Filled.LooksTwo" Color="Color.Primary" Size="Size.Small">@context.SecondLevel</MudChip>
+                        <br/>
+                    }
+                    @if (!string.IsNullOrEmpty(context.ThirdLevel))
+                    {
+                        <MudChip Icon="@Icons.Material.Filled.Looks3" Color="Color.Tertiary" Size="Size.Small">@context.ThirdLevel</MudChip>
+                        <br/>
+                    }
+                </MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudContainer>
+</MudPaper>
+
+@code {
+    private bool dense = true;
+    private bool hover = true;
+    private bool striped = true;
+    private bool bordered = true;
+
+    private IEnumerable<Charm> Elements = new List<Charm>();
+
+    protected override async Task OnInitializedAsync()
+        => Elements = _charmService.Charms;
+
+}

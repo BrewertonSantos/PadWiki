@@ -2,37 +2,38 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using PadWiki.WebApp;
 using System.Globalization;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.JSInterop;
+using PadWiki.WebApp.Extensions;
+using PadWiki.WebApp.Middlewares;
+using PadWiki.WebApp.Services;
+using PadWiki.WebApp.Services.Contracts;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.Services.AddSingleton<ICardService, CardService>();
+builder.Services.AddSingleton<ICharmService, CharmService>();
+
+// Adicionar serviços de localização
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
 builder.RootComponents.Add<App>("#app");
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddTransient<CacheControlMiddleware>(provider =>
+    new CacheControlMiddleware(provider.GetRequiredService<RequestDelegate>(), new Uri(builder.HostEnvironment.BaseAddress)));
+
 builder.Services.AddMudServices();
-builder.Services.AddLocalization();
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    var supportedCultures = new[]
-    {
-        new CultureInfo("en-US"),
-        new CultureInfo("es-MX"),
-        new CultureInfo("pl-PL"),
-        new CultureInfo("pt-BR"),
-        new CultureInfo("pt-PT"),
-        new CultureInfo("ru-RU")
-    };
 
-    CultureInfo.DefaultThreadCurrentCulture = supportedCultures[0];
-    CultureInfo.DefaultThreadCurrentUICulture = supportedCultures[0];
-    CultureInfo.CurrentCulture = supportedCultures[0];
-    CultureInfo.CurrentUICulture = supportedCultures[0];
-    options.DefaultRequestCulture = new RequestCulture("en-US");
-    options.SupportedCultures = supportedCultures;
-    options.SupportedUICultures = supportedCultures;
-});
+WebAssemblyHost host = builder.Build();
+IJSRuntime jsInterop = host.Services.GetRequiredService<IJSRuntime>();
+string? result = await jsInterop.InvokeAsync<string>("blazorCulture.get");
 
-var host = builder.Build();
-builder.Services.AddLocalization(options => options.ResourcesPath = "Greeting");
+CultureInfo culture;
 
+if (result is not null) culture = new CultureInfo(result);
+else culture = new CultureInfo("en-US");
+
+await host.SetDefaultCulture();
+
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
 await host.RunAsync();

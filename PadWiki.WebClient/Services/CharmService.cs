@@ -3,11 +3,11 @@ using PadWiki.WebClient.Services.Contracts;
 
 namespace PadWiki.WebClient.Services;
 
-public class PokemonCharmsService : IPokemonCharmsService
+public class CharmService : ICharmService
 {
     public List<Charm> Charms { get; set; }
 
-    public PokemonCharmsService()
+    public CharmService()
     {
         Charms = new();
         PopulatePokemonCharms();

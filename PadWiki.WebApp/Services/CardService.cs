@@ -1,14 +1,14 @@
-﻿using PadWiki.WebClient.Entities;
-using PadWiki.WebClient.Enums;
-using PadWiki.WebClient.Services.Contracts;
+﻿using PadWiki.WebApp.Entities;
+using PadWiki.WebApp.Enums;
+using PadWiki.WebApp.Services.Contracts;
 
-namespace PadWiki.WebClient.Services;
+namespace PadWiki.WebApp.Services;
 
-public class PokemonCardsService : IPokemonCardsService
+public class CardService : ICardService
 {
     public List<TradingCard> Cards { get; set; }
 
-    public PokemonCardsService()
+    public CardService()
     {
         Cards = new();
         PopulatePokemonCards();

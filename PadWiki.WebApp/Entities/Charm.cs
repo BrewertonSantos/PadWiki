@@ -1,9 +1,33 @@
-﻿
+﻿using PadWiki.WebApp.Enums;
+using PadWiki.WebApp.ValueObjects;
+
 namespace PadWiki.WebApp.Entities;
 
 public class Charm : Entity
 {
-    // Public Constructors
+    #region Required Parameters
+
+    public string Name { get; set; }
+    public CharmLevel ThirdLevel { get; set; }
+
+    #endregion
+
+    #region Optional Parameters
+    
+    public ResourceText? Description { get; set; }
+    public CharmLevel? FirstLevel { get; set; }
+    public string? ImageUrl { get; set; }
+    public int? PveCooldownInSeconds { get; set; }
+    public int? PvpCooldownInSeconds { get; set; }
+    public CharmLevel? SecondLevel { get; set; }
+    public string? SpoilerImage { get; set; }
+    public ResourceText? UsageInfo { get; set; }
+    public EPlayerCreatureEffect WorksOn { get; set; }
+    
+    #endregion
+
+    #region Public Constructors
+
     public Charm(
         string name,
         int firstLevelFirstBoost = 0,
@@ -15,13 +39,12 @@ public class Charm : Entity
         int thirdLevelFirstBoost = 0,
         int thirdLevelSecondBoost = 0,
         int thirdLeveThirdBoost = 0,
-        string description = "",
-        string imageUrl = "",
+        ResourceText? description = null,
+        string? imageUrl = null,
         int pveCooldownInSeconds = 0,
         int pvpCooldownInSeconds = 0,
-        string usageInfo = "",
-        bool worksInPve = true,
-        bool worksInPvp = false)
+        ResourceText? usageInfo = null,
+        EPlayerCreatureEffect worksOn = EPlayerCreatureEffect.PvEAndPvP)
     {
         FirstLevel = new CharmLevel(firstLevelFirstBoost, firstLevelSecondBoost, firstLeveThirdBoost);
         SecondLevel = new CharmLevel(secondLevelFirstBoost, secondLevelSecondBoost, secondLeveThirdBoost);
@@ -33,23 +56,8 @@ public class Charm : Entity
         PveCooldownInSeconds = pveCooldownInSeconds;
         PvpCooldownInSeconds = pvpCooldownInSeconds;
         UsageInfo = usageInfo;
-        WorksInPve = worksInPve;
-        WorksInPvp = worksInPvp;
+        WorksOn = worksOn;
     }
-
-    // Required Parameters
-    public CharmLevel FirstLevel { get; private set; }
-    public string Name { get; private set; }
-    public CharmLevel SecondLevel { get; private set; }
-    public CharmLevel ThirdLevel { get; private set; }
-
-    // Optional Parameters
-    public string Description { get; private set; }
-    public string ImageUrl { get; private set; }
-    public int PveCooldownInSeconds { get; private set; }
-    public int PvpCooldownInSeconds { get; private set; }
-    public string SpoilerImage { get; private set; }
-    public string UsageInfo { get; private set; }
-    public bool WorksInPve { get; private set; }
-    public bool WorksInPvp { get; private set; }
+    
+    #endregion
 }

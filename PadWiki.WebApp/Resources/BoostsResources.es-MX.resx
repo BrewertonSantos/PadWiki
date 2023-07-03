@@ -1,0 +1,20 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, CultureModel=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, CultureModel=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="CatchCharmDescription" xml:space="preserve">
+        <value>Otorga un porcentaje adicional de probabilidad para la tasa de captura.</value>
+    </data>
+    <data name="LuckyCharmDescription" xml:space="preserve">
+        <value>Otorga una probabilidad en porcentaje de soltar objetos.</value>
+    </data>
+</root>

@@ -1,4 +1,13 @@
 ﻿<MudNavMenu>
-    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-    <MudNavLink Href="charms" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Charms</MudNavLink>
+    <MudNavLink Href="" Match="NavLinkMatch.All">Home</MudNavLink>
+    <MudNavGroup Title="Items" Expanded="false">
+        <MudNavLink Href="/charms">Charms</MudNavLink>
+        @* <MudNavGroup Title="Level 1" Icon="@Icons.Material.Filled.AdminPanelSettings" Expanded="true"> *@
+        @*     <MudNavGroup Title="Level 2" Icon="@Icons.Material.Filled.People" Expanded="true"> *@
+        @*         <MudNavGroup Title="Level 3" Icon="@Icons.Material.Filled.Lock" Expanded="true"> *@
+        @*             <MudNavLink Href="/delete" Icon="@Icons.Material.Filled.DeleteForever">Delete Password</MudNavLink> *@
+        @*         </MudNavGroup> *@
+        @*     </MudNavGroup> *@
+        @* </MudNavGroup> *@
+    </MudNavGroup>
 </MudNavMenu>

@@ -1,16 +1,14 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using PadWiki.WebClient;
-using PadWiki.WebClient.Services;
-using PadWiki.WebClient.Services.Contracts;
-using Microsoft.Extensions.Localization;
 using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
+using PadWiki.WebClient.Services;
+using PadWiki.WebClient.Services.Contracts;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.Services.AddSingleton<IPokemonCardsService, PokemonCardsService>();
-builder.Services.AddSingleton<IPokemonCharmsService, PokemonCharmsService>();
+builder.Services.AddSingleton<ICardService, CardService>();
+builder.Services.AddSingleton<ICharmService, CharmService>();
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 

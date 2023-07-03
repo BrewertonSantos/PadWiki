@@ -5,7 +5,7 @@ namespace PadWiki.WebClient.Services.Contracts;
 /// <summary>
 /// Defines the basic structure for a service that manages a collection of Pokémon trading cards.
 /// </summary>
-public interface IPokemonCardsService
+public interface ICardService
 {
     /// <summary>
     /// Stores all necessary information of a Pokémon trading card and among other characteristics that may be relevant in the context.

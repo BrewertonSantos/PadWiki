@@ -1,12 +1,15 @@
 ﻿@using System.Globalization
-@inject IJSRuntime JS
+@using Microsoft.AspNetCore.Builder
+@using PadWiki.WebApp.Pages
+@inject IJSRuntime  JSRuntime
 @inject NavigationManager Navigation
 @inject IStringLocalizer<CultureSelector> Localizer
 
-<MudMenu Label="@GetFriendlyLanguageName(@cultureValue.Name)" Dense="false">
-    @foreach (var culture in supportedCultures)
+<MudImage Alt="flag" Src="@($"media/images/flags/{CultureInfo.CurrentCulture.Name}.svg")" Height="14" Style="vertical-align: middle;"/>
+<MudMenu Label="@GetFriendlyLanguageName(CultureInfo.CurrentCulture.Name)" Dense="false" Color="Color.Primary">
+    @foreach (var culture in _cultures)
     {
-        <MudMenuItem>
+        <MudMenuItem OnClick="() => SetCulture(CultureInfo.GetCultureInfo(culture.Name))">
             <MudItem Style="display: flex; align-items: center;">
                 <MudImage Alt="flag" Src="@($"media/images/flags/{culture.Name}.svg")" Height="14" Style="vertical-align: middle;"/>
                 <MudText class="mx-5">@GetFriendlyLanguageName(culture.Name)</MudText>
@@ -17,37 +20,8 @@
 
 @code
 {
-    private CultureInfo cultureValue { get; set; } = CultureInfo.CurrentCulture;
-    private Func<CultureInfo, string> convertFunc = ci => ci?.DisplayName;
-
-    private List<CultureInfo> supportedCultures = new()
-    {
-        CultureInfo.GetCultureInfo("en-US"),
-        CultureInfo.GetCultureInfo("es-MX"),
-        CultureInfo.GetCultureInfo("pl-PL"),
-        CultureInfo.GetCultureInfo("pt-BR"),
-        CultureInfo.GetCultureInfo("pt-PT"),
-        CultureInfo.GetCultureInfo("ru-RU")
-    };
-
-    private CultureInfo Culture
-    {
-        get => CultureInfo.CurrentCulture;
-        set
-        {
-            if (CultureInfo.CurrentCulture != value)
-            {
-                var js = (IJSInProcessRuntime)JS;
-                js.InvokeVoid("blazorCulture.set", value.Name);
-
-                Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
-            }
-        }
-    }
-
     private string GetFriendlyLanguageName(string cultureName)
     {
-    // Mapear as culturas para os nomes amigáveis correspondentes
         var languageNames = new Dictionary<string, string>
         {
             { "en-US", "English" },
@@ -56,16 +30,35 @@
             { "pt-BR", "Brazil" },
             { "pt-PT", "Portugal" },
             { "ru-RU", "Russia" }
-    // Outras culturas suportadas
         };
-
+    
         if (languageNames.ContainsKey(cultureName))
         {
             return languageNames[cultureName];
         }
         else
         {
-            return cultureName; // Retorna a sigla da cultura caso o nome amigável não esteja mapeado
+            return cultureName;
+        }
+    }
+
+    private CultureInfo[] _cultures = new[]
+    {
+        CultureInfo.GetCultureInfo("en-US"),
+        CultureInfo.GetCultureInfo("es-MX"),
+        CultureInfo.GetCultureInfo("pl-PL"),
+        CultureInfo.GetCultureInfo("pt-BR"),
+        CultureInfo.GetCultureInfo("pt-PT"),
+        CultureInfo.GetCultureInfo("ru-RU")
+    };
+    
+    public void SetCulture(CultureInfo culture)
+    {
+        if (!CultureInfo.CurrentCulture.Equals(culture) && _cultures.Contains(culture))
+        {
+            IJSInProcessRuntime js = (IJSInProcessRuntime)JSRuntime;
+            js.InvokeVoid("blazorCulture.set", culture.Name);
+            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
         }
     }
 }

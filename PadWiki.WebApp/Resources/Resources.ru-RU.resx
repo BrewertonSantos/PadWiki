@@ -1,0 +1,44 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, CultureModel=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, CultureModel=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Name" xml:space="preserve">
+        <value>Имя</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Описание</value>
+    </data>
+    <data name="UsageInfo" xml:space="preserve">
+        <value>Информация об использовании</value>
+    </data>
+    <data name="Cooldown" xml:space="preserve">
+        <value>Время восстановления</value>
+    </data>
+    <data name="WorksOn" xml:space="preserve">
+        <value>Работает на</value>
+    </data>
+    <data name="BoostStages" xml:space="preserve">
+        <value>Cтадии</value>
+    </data>
+    <data name="Bordered" xml:space="preserve">
+        <value>С рамкой</value>
+    </data>
+    <data name="Dense" xml:space="preserve">
+        <value>Плотный</value>
+    </data>
+    <data name="Hover" xml:space="preserve">
+        <value>Навести</value>
+    </data>
+    <data name="Striped" xml:space="preserve">
+        <value>В полоску</value>
+    </data>
+</root>

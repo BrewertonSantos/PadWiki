@@ -15,12 +15,118 @@
 		<PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0-preview.4.23259.5" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0-preview.4.23260.4" />
-		<PackageReference Include="MudBlazor" Version="6.2.3" />
+		<PackageReference Include="MudBlazor" Version="6.5.0" />
 		<PackageReference Include="MudBlazor.ThemeManager" Version="1.0.8" />
 	</ItemGroup>
 	
 	<ItemGroup>
 		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Resources.es-MX.resx">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Resources.pl-PL.resx">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Resources.pt-BR.resx">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Resources.pt-PT.resx">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Resources.ru-RU.resx">
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnumResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Dictionary.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnumResources.es-MX.resx">
+	    <DependentUpon>EnumResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnumResources.pl-PL.resx">
+	    <DependentUpon>EnumResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnumResources.pt-BR.resx">
+	    <DependentUpon>EnumResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnumResources.pt-PT.resx">
+	    <DependentUpon>EnumResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnumResources.ru-RU.resx">
+	    <DependentUpon>EnumResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Dictionary.es-MX.resx">
+	    <DependentUpon>Dictionary.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Dictionary.pl-PL.resx">
+	    <DependentUpon>Dictionary.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Dictionary.pt-BR.resx">
+	    <DependentUpon>Dictionary.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Dictionary.pt-PT.resx">
+	    <DependentUpon>Dictionary.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Dictionary.ru-RU.resx">
+	    <DependentUpon>Dictionary.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\BoostsResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>BoostsResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\BoostsResources.es-MX.resx">
+	    <DependentUpon>BoostsResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\BoostsResources.pl-PL.resx">
+	    <DependentUpon>BoostsResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\BoostsResources.pt-BR.resx">
+	    <DependentUpon>BoostsResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\BoostsResources.pt-PT.resx">
+	    <DependentUpon>BoostsResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\BoostsResources.ru-RU.resx">
+	    <DependentUpon>BoostsResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Folder Include="Components\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="Resources\EnumResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EnumResources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Dictionary.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Dictionary.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\BoostsResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>BoostsResources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

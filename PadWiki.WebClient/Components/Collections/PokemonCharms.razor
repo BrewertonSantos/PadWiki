@@ -1,7 +1,7 @@
 ﻿@using PadWiki.WebClient.Services.Contracts
 @using PadWiki.WebClient.Entities
 @using Humanizer
-@inject IPokemonCharmsService PokemonCharmsService
+@inject ICharmService CharmService
 
 <table class="table align-middle mb-0 bg-white">
     <thead class="bg-light">
@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var charm in PokemonCharmsService.Charms)
+    @foreach (var charm in CharmService.Charms)
     {
         <tr>
             <td>
