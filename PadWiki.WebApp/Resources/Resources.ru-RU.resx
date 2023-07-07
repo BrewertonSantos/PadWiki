@@ -41,4 +41,7 @@
     <data name="Striped" xml:space="preserve">
         <value>В полоску</value>
     </data>
+    <data name="IncommingImprovement" xml:space="preserve">
+        <value>Мы работаем над обновлением и улучшением страницы, которую вы просматриваете, и в скором времени предоставим подробную и точную информацию по этому вопросу.</value>
+    </data>
 </root>

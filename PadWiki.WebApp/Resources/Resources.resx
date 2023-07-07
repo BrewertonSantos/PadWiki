@@ -147,4 +147,7 @@
   <data name="Striped" xml:space="preserve">
     <value>Striped</value>
   </data>
+  <data name="IncommingImprovement" xml:space="preserve">
+    <value>We will be working on updating and enhancing the page you are currently visiting, providing soon detailed and accurate information on the subject.</value>
+  </data>
 </root>

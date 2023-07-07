@@ -41,4 +41,7 @@
     <data name="Striped" xml:space="preserve">
         <value>A rayas</value>
     </data>
+    <data name="IncommingImprovement" xml:space="preserve">
+        <value>Estamos trabajando en actualizar y mejorar la página que estás visitando, brindando próximamente información detallada y precisa sobre el tema.</value>
+    </data>
 </root>

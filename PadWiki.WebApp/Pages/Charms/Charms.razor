@@ -7,6 +7,9 @@
 @inject ICharmService _charmService
 
 <MudPaper Height="100%" Style="overflow: scroll;">
+    
+    <MudAlert Severity="Severity.Info">@Resources.IncommingImprovement</MudAlert>
+    
     <MudContainer Class="pa-5" Fixed="true">
         <MudTable Class="text-center" Items="@Elements" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
             <ToolBarContent>

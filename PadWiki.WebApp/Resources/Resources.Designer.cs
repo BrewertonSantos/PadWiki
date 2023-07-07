@@ -114,6 +114,15 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We will be working on updating and enhancing the page you are currently visiting, providing soon detailed and accurate information on the subject..
+        /// </summary>
+        internal static string IncommingImprovement {
+            get {
+                return ResourceManager.GetString("IncommingImprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string Name {

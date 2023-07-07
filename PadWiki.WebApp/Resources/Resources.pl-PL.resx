@@ -41,4 +41,7 @@
     <data name="Striped" xml:space="preserve">
         <value>W paski</value>
     </data>
+    <data name="IncommingImprovement" xml:space="preserve">
+        <value>Pracujemy nad aktualizacją i ulepszaniem strony, którą obecnie przeglądasz, aby wkrótce dostarczyć szczegółowe i dokładne informacje na temat przedmiotu.</value>
+    </data>
 </root>
