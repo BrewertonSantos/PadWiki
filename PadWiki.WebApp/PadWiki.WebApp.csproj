@@ -103,10 +103,6 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <Folder Include="Components\" />
-	</ItemGroup>
-	
-	<ItemGroup>
 	  <Compile Update="Resources\EnumResources.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
