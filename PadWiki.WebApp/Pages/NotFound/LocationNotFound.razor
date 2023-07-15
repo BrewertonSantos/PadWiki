@@ -1,0 +1,56 @@
+﻿@page "/location-not-found"
+@using PadWiki.WebApp.Resources
+@using Timer = System.Threading.Timer
+@layout CleanLayout
+
+<PageTitle>Location not found</PageTitle>
+<HeadContent>
+    <meta name="description" content="Could not find the location you are looking for."/>
+</HeadContent>
+
+<MudPaper Class="align-content-center justify-center align-center" Height="90%" Style="overflow: scroll; display: grid; justify-items: center;">
+    <MudImage
+        Alt="slowpoke thinking by the19thGinny on deviant art"
+        Class="rounded-lg align-content-center"
+        Fluid="true"
+        ObjectFit="ObjectFit.Fill"
+        ObjectPosition="ObjectPosition.Center"
+        Src="media/images/interactions/slowpoke_wws_by_the19thginny_d7cwkbh-250t.png"/>
+    
+    <MudText Align="Align.Center" Class="unown-text" Style="font-size: 32pt; font-weight: bold;">
+        Location not found
+    </MudText>
+
+    <MudText Align="Align.Center" Class="px-12 py-4" Typo="Typo.body1" Style="font-size: 14pt;">@MessageResources.LocationNotFoundMessage</MudText>
+    <p>@secondsRemaining@MessageResources.TimeToRedirectInSeconds</p>
+    <MudButton OnClick="Redirect">@MessageResources.RedirectNow</MudButton>
+</MudPaper>
+
+@code {
+    private Timer timer;
+    private int secondsRemaining = 10;
+
+    protected override void OnInitialized()
+        => timer = new Timer(TimerElapsed, null, 1000, 1000);
+
+    private void TimerElapsed(object state)
+    {
+        secondsRemaining--;
+        if (secondsRemaining <= 0)
+        {
+            timer.Dispose();
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private void Redirect()
+    {
+        timer.Dispose();
+        NavigationManager.NavigateTo("/");
+    }
+
+}
