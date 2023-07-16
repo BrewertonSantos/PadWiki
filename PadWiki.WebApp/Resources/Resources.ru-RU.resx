@@ -44,4 +44,46 @@
     <data name="IncommingImprovement" xml:space="preserve">
         <value>Мы работаем над обновлением и улучшением страницы, которую вы просматриваете, и в скором времени предоставим подробную и точную информацию по этому вопросу.</value>
     </data>
+    <data name="HuntingGrounds" xml:space="preserve">
+        <value>Места охоты (Mesta okhoty)</value>
+    </data>
+    <data name="RequiredLevel" xml:space="preserve">
+        <value>Требуемый уровень</value>
+    </data>
+    <data name="OtherRequirements" xml:space="preserve">
+        <value>Другие требования</value>
+    </data>
+    <data name="Difficulty" xml:space="preserve">
+        <value>Сложность</value>
+    </data>
+    <data name="Topography" xml:space="preserve">
+        <value>Топография</value>
+    </data>
+    <data name="SuggestedTypesHere" xml:space="preserve">
+        <value>Tipos Sugeridos Aqui</value>
+    </data>
+    <data name="ExperienceRate" xml:space="preserve">
+        <value>Уровень Опыта</value>
+    </data>
+    <data name="ProfitRate" xml:space="preserve">
+        <value>Уровень Прибыли</value>
+    </data>
+    <data name="OnlyPlayersWithVIPAccount" xml:space="preserve">
+        <value>Только игроки с VIP-аккаунтом (DACC)</value>
+    </data>
+    <data name="Search" xml:space="preserve">
+        <value>Поиск (Poisk)</value>
+    </data>
+    <data name="NoMatchingRecordsFound" xml:space="preserve">
+        <value>Совпадающих записей не найдено</value>
+    </data>
+    <data name="LoadingProcess" xml:space="preserve">
+        <value>Загрузка...</value>
+    </data>
+    <data name="RowsPerPage" xml:space="preserve">
+        <value>Linhas Por Página</value>
+    </data>
+    <data name="Of" xml:space="preserve">
+        <value>из</value>
+    </data>
 </root>

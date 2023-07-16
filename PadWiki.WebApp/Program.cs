@@ -13,7 +13,7 @@ using PadWiki.WebApp.Services.Contracts;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddSingleton<ICardService, CardService>();
 builder.Services.AddSingleton<ICharmService, CharmService>();
-builder.Services.AddSingleton<ICaveService, CaveService>();
+builder.Services.AddSingleton<IHuntingGroundService, HuntingGroundService>();
 builder.Services.AddScoped<HttpClient>(s =>
 {
     var navigationManager = s.GetRequiredService<NavigationManager>();

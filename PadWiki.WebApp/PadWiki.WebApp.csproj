@@ -13,6 +13,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.2" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.9" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0-preview.4.23259.5" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0-preview.4.23260.4" />
 		<PackageReference Include="MudBlazor" Version="6.5.0" />
@@ -104,10 +105,44 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>MessageResources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
-	</ItemGroup>
-	
-	<ItemGroup>
-	  <Folder Include="Components\" />
+	  <EmbeddedResource Update="Resources\LocalizationResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>LocalizationResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\LocalizationResources.es-mx.resx">
+	    <DependentUpon>LocalizationResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\LocalizationResources.pl-pl.resx">
+	    <DependentUpon>LocalizationResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\LocalizationResources.pt-br.resx">
+	    <DependentUpon>LocalizationResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\LocalizationResources.pt-pt.resx">
+	    <DependentUpon>LocalizationResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\LocalizationResources.ru-ru.resx">
+	    <DependentUpon>LocalizationResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\MessageResources.es-mx.resx">
+	    <DependentUpon>MessageResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\MessageResources.pl-pl.resx">
+	    <DependentUpon>MessageResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\MessageResources.pt-br.resx">
+	    <DependentUpon>MessageResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\MessageResources.pt-pt.resx">
+	    <DependentUpon>MessageResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\MessageResources.ru-ru.resx">
+	    <DependentUpon>MessageResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnergiesResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>EnergiesResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -136,6 +171,20 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>MessageResources.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Resources\LocalizationResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>LocalizationResources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\EnergiesResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>EnergiesResources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <_ContentIncludedByDefault Remove="Components\Energy.razor" />
 	</ItemGroup>
 
 </Project>

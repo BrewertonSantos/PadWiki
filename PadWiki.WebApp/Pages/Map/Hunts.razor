@@ -1,0 +1,138 @@
+﻿@page "/map/hunting-grounds"
+@using PadWiki.WebApp.Resources
+@using PadWiki.WebApp.Entities
+@using PadWiki.WebApp.Services.Contracts
+@inject IHuntingGroundService HuntingGroundService
+
+<link href="styles/energies.css" rel="stylesheet">
+
+<MudPaper Height="100%" Style="overflow: scroll;">
+    <MudAlert Severity="Severity.Info">@Resources.IncommingImprovement</MudAlert>
+
+    <MudTable ServerData="@(new Func<TableState, Task<TableData<HuntingGround>>>(ServerReload))"
+              Dense="true" Hover="true" @ref="table">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">@Resources.HuntingGrounds</MudText>
+            <MudSpacer/>
+            <MudTextField T="string" ValueChanged="@(s => OnSearch(s))" Placeholder="@Resources.Search" Adornment="Adornment.Start"
+                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0">
+            </MudTextField>
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh>
+                <MudTableSortLabel SortLabel="Name" T="String">@Resources.Name</MudTableSortLabel>
+            </MudTh>
+            <MudTh>
+                <MudTableSortLabel SortLabel="RequiredLevel" T="Int16">@Resources.RequiredLevel</MudTableSortLabel>
+            </MudTh>
+            <MudTh>
+                <MudTableSortLabel SortLabel="SuggestedTypesHere" T="HuntingGround">@Resources.SuggestedTypesHere</MudTableSortLabel>
+            </MudTh>
+            <MudTh>
+                <MudTableSortLabel SortLabel="OtherRequirements" T="HuntingGround">@Resources.OtherRequirements</MudTableSortLabel>
+            </MudTh>
+            <MudTh>
+                <MudTableSortLabel SortLabel="Difficulty" T="Decimal">@Resources.Difficulty</MudTableSortLabel>
+            </MudTh>
+            <MudTh>
+                <MudTableSortLabel SortLabel="ExperienceRate" T="Decimal">@Resources.ExperienceRate</MudTableSortLabel>
+            </MudTh>
+            <MudTh>
+                <MudTableSortLabel SortLabel="ProfitRate" T="Decimal">@Resources.ProfitRate</MudTableSortLabel>
+            </MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Name"><MudLink Href="@($"/map/hunting-grounds/{context.Slug}")">@context.Title</MudLink></MudTd>
+            <MudTd DataLabel="RequiredLevel">@context.RequiredLevel</MudTd>
+            <MudTd DataLabel="SuggestedTypesHere">
+                @foreach (var energy in context.SuggestedTypesHere)
+                {
+                    <MudTooltip Text="@EnergiesResources.ResourceManager.GetString(energy.ToString())">
+                        <MudAvatar Class="@($"icon-{energy}-small")" Style="background-color: transparent; width: 24px; height: 24px;"/>
+                    </MudTooltip>
+                }
+            </MudTd>
+            <MudTd DataLabel="OtherRequirements">
+                @if (context.IsDaccOnly)
+                {
+                    <MudTooltip Text="@Resources.OnlyPlayersWithVIPAccount">
+                        <MudImage Alt="diamond-sprite" Height="24" Src="media/images/items/premium-shop/4079e3cc-6ded-4191-8074-12c099f0e7d5.gif" Width="24"></MudImage>
+                    </MudTooltip>
+                }
+            </MudTd>
+            <MudTd DataLabel="Difficulty">@context.Difficulty/100</MudTd>
+            <MudTd DataLabel="ExperienceRate">@context.ExperienceRate/100</MudTd>
+            <MudTd DataLabel="ProfitRate">@context.ProfitRate/100</MudTd>
+        </RowTemplate>
+        <NoRecordsContent>
+            <MudText>@Resources.NoMatchingRecordsFound</MudText>
+        </NoRecordsContent>
+        <LoadingContent>
+            <MudText>@Resources.LoadingProcess</MudText>
+        </LoadingContent>
+        <PagerContent>
+            <MudTablePager
+                HorizontalAlignment="HorizontalAlignment.Center"
+                InfoFormat="@("{first_item}-{last_item} " + Resources.Of + " {all_items}")"
+                RowsPerPageString="@Resources.RowsPerPage"/>
+        </PagerContent>
+    </MudTable>
+</MudPaper>
+
+@code {
+    private IEnumerable<HuntingGround> pagedData;
+    private MudTable<HuntingGround> table;
+
+    private int totalItems;
+    private string searchString = null;
+
+    private async Task<TableData<HuntingGround>> ServerReload(TableState state)
+    {
+        IEnumerable<HuntingGround> data = HuntingGroundService.HuntingGrounds;
+
+        data = HuntingGroundService.HuntingGrounds.Where(element =>
+        {
+            if (string.IsNullOrWhiteSpace(searchString))
+                return true;
+            if (element.Id.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.Title.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.Resume.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if (element.Description.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase))
+                return true;
+            if ($"{element.Id} {element.Title} {element.Resume} {element.Description}".Contains(searchString))
+                return true;
+            return false;
+        }).ToArray();
+
+        totalItems = data.Count();
+
+        switch (state.SortLabel)
+        {
+            case "nr_field":
+                data = data.OrderByDirection(state.SortDirection, o => o.Id);
+                break;
+            case "sign_field":
+                data = data.OrderByDirection(state.SortDirection, o => o.Title);
+                break;
+            case "name_field":
+                data = data.OrderByDirection(state.SortDirection, o => o.Resume);
+                break;
+            case "position_field":
+                data = data.OrderByDirection(state.SortDirection, o => o.Description);
+                break;
+        }
+
+        pagedData = data.Skip(state.Page * state.PageSize).Take(state.PageSize).ToArray();
+        return new TableData<HuntingGround>() { TotalItems = totalItems, Items = pagedData };
+    }
+
+    private void OnSearch(string text)
+    {
+        searchString = text;
+        table.ReloadServerData();
+    }
+
+}

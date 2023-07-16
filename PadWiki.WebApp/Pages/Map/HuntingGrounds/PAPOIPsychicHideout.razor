@@ -1,13 +1,13 @@
-﻿@page "/journey/caves/{CaveSlug}"
+﻿@page "/map/hunting-grounds/{Slug}"
 @using PadWiki.WebApp.Entities
 @using PadWiki.WebApp.Services.Contracts
-@inject ICaveService CaveService
+@inject IHuntingGroundService HuntingGroundService
 @inject NavigationManager NavigationManager
 
 <MudPaper id="unique_id_scroll_section" Class="pa-16 ma-2" Style="overflow: auto;" Height="100%">
     <MudBreadcrumbs Items="_items"></MudBreadcrumbs>
 
-    <MudAlert ContentAlignment="HorizontalAlignment.Center" Icon="@Icons.Material.Filled.Map" Severity="Severity.Normal" Square="true" Variant="Variant.Outlined">@Cave.Title</MudAlert><br/>
+    <MudAlert ContentAlignment="HorizontalAlignment.Center" Icon="@Icons.Material.Filled.Map" Severity="Severity.Normal" Square="true" Variant="Variant.Outlined">@_huntingGround.Title</MudAlert><br/>
 
     <MudText Align="Align.Center">
         <MudLink Href="#">Introdução</MudLink>
@@ -67,10 +67,10 @@
 @* </div> *@
 
 @code {
-    private Cave Cave;
+    private HuntingGround _huntingGround;
 
     [Parameter]
-    public string? CaveSlug { get; set; }
+    public string? Slug { get; set; }
 
     private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
     {
@@ -96,10 +96,10 @@
     {
         await base.OnInitializedAsync();
 
-        Cave = CaveService.GetBySlug(CaveSlug);
+        _huntingGround = HuntingGroundService.GetBySlug(Slug);
 
-        if (Cave is null)
-            NavigationManager.NavigateTo("/journey/caves/not-found");
+        if (_huntingGround is null)
+            NavigationManager.NavigateTo("/location-not-found");
     }
 
 }

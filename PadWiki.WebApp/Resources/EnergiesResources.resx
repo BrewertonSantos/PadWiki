@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Normal" xml:space="preserve">
+        <value>Normal</value>
+    </data>
+    <data name="Bug" xml:space="preserve">
+        <value>Bug</value>
+    </data>
+    <data name="Dark" xml:space="preserve">
+        <value>Dark</value>
+    </data>
+    <data name="Dragon" xml:space="preserve">
+        <value>Dragon</value>
+    </data>
+    <data name="Electric" xml:space="preserve">
+        <value>Electric</value>
+    </data>
+    <data name="Fairy" xml:space="preserve">
+        <value>Fairy</value>
+    </data>
+    <data name="Fighting" xml:space="preserve">
+        <value>Fighting</value>
+    </data>
+    <data name="Fire" xml:space="preserve">
+        <value>Fire</value>
+    </data>
+    <data name="Flying" xml:space="preserve">
+        <value>Flying</value>
+    </data>
+    <data name="Ghost" xml:space="preserve">
+        <value>Ghost</value>
+    </data>
+    <data name="Grass" xml:space="preserve">
+        <value>Grass</value>
+    </data>
+    <data name="Ground" xml:space="preserve">
+        <value>Ground</value>
+    </data>
+    <data name="Ice" xml:space="preserve">
+        <value>Ice</value>
+    </data>
+    <data name="Poison" xml:space="preserve">
+        <value>Poison</value>
+    </data>
+    <data name="Psychic" xml:space="preserve">
+        <value>Psychic</value>
+    </data>
+    <data name="Rock" xml:space="preserve">
+        <value>Rock</value>
+    </data>
+    <data name="Steel" xml:space="preserve">
+        <value>Steel</value>
+    </data>
+    <data name="Water" xml:space="preserve">
+        <value>Water</value>
+    </data>
+</root>

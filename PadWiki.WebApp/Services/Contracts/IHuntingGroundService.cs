@@ -5,19 +5,19 @@ namespace PadWiki.WebApp.Services.Contracts;
 /// <summary>
 /// Defines the basic structure for a service that manages a collection of Quests.
 /// </summary>
-public interface ICaveService
+public interface IHuntingGroundService
 {
     /// <summary>
     /// Stores all necessary information of caves and among other characteristics that may be relevant in the context.
     /// </summary>
-    List<Cave> Caves { get; set; }
+    List<HuntingGround> HuntingGrounds { get; set; }
 
     /// <summary>
-    /// Get a <see cref="Cave"/> by slug string.
+    /// Get a <see cref="HuntingGround"/> by slug string.
     /// </summary>
     /// <param name="slug">Snake case string</param>
-    /// <returns>An existing <see cref="Cave"/> object that match with the parameter.</returns>
-    Cave? GetBySlug(string slug);
+    /// <returns>An existing <see cref="HuntingGround"/> object that match with the parameter.</returns>
+    HuntingGround? GetBySlug(string slug);
 
     /// <summary>
     /// Responsible for populating the Caves list.

@@ -150,4 +150,46 @@
   <data name="IncommingImprovement" xml:space="preserve">
     <value>We will be working on updating and enhancing the page you are currently visiting, providing soon detailed and accurate information on the subject.</value>
   </data>
+  <data name="HuntingGrounds" xml:space="preserve">
+    <value>Hunting grounds</value>
+  </data>
+  <data name="RequiredLevel" xml:space="preserve">
+    <value>Required level</value>
+  </data>
+  <data name="OtherRequirements" xml:space="preserve">
+    <value>Other requirements</value>
+  </data>
+  <data name="Difficulty" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="Topography" xml:space="preserve">
+    <value>Topography</value>
+  </data>
+  <data name="SuggestedTypesHere" xml:space="preserve">
+    <value>Suggested Types Here</value>
+  </data>
+  <data name="ExperienceRate" xml:space="preserve">
+    <value>Experience Rate</value>
+  </data>
+  <data name="ProfitRate" xml:space="preserve">
+    <value>Profit Rate</value>
+  </data>
+  <data name="OnlyPlayersWithVIPAccount" xml:space="preserve">
+    <value>Only players with VIP account (DACC)</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="NoMatchingRecordsFound" xml:space="preserve">
+    <value>No matching records found</value>
+  </data>
+  <data name="LoadingProcess" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="RowsPerPage" xml:space="preserve">
+    <value>Rows Per Page</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>of</value>
+  </data>
 </root>

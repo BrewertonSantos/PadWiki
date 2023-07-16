@@ -1,0 +1,215 @@
+﻿.icon-Bug {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 52px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Bug-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -123px -27px;
+}
+
+.icon-Dark {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 149px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Dark-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -75px -51px;
+}
+
+.icon-Dragon {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 197px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Dragon-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -51px -51px;
+}
+
+.icon-Electric {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 149px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Electric-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -75px -3px;
+}
+
+.icon-Fairy {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 52px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Fairy-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -123px -51px;
+}
+
+.icon-Fighting {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 593px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Fighting-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -3px -27px;
+}
+
+.icon-Fire {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: -56px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Fire-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -27px -3px;
+}
+
+.icon-Flying {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 149px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Flying-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -75px -27px;
+}
+
+.icon-Ghost {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: -56px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Ghost-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -27px -51px;
+}
+
+.icon-Grass {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 100px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Grass-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -99px -3px;
+}
+
+.icon-Ground {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 197px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Ground-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -51px -27px;
+}
+
+.icon-Ice {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 52px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Ice-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -123px -3px;
+}
+
+.icon-Normal {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 593px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Normal-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -3px -3px;
+}
+
+.icon-Poison {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: -56px -51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Poison-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -27px -27px;
+}
+
+.icon-Psychic {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 100px 99px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Psychic-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -99px -27px;
+}
+
+.icon-Rock {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 593px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Rock-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -3px -51px;
+}
+
+.icon-Steel {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 100px 51px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Steel-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -99px -51px;
+}
+
+.icon-Water {
+    background-image: url('/media/images/bagdes/eff35b98-4339-460c-83cb-c543109c2dd1.png');
+    background-position: 197px -5px;
+    width: 45px;
+    height: 45px;
+}
+
+.icon-Water-small {
+    background-image: url('/media/images/bagdes/05e005dc-f0ec-493d-94bc-daac0be25e5d.png');
+    background-position: -51px -3px;
+}

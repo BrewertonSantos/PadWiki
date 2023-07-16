@@ -44,4 +44,46 @@
     <data name="IncommingImprovement" xml:space="preserve">
         <value>Pracujemy nad aktualizacją i ulepszaniem strony, którą obecnie przeglądasz, aby wkrótce dostarczyć szczegółowe i dokładne informacje na temat przedmiotu.</value>
     </data>
+    <data name="HuntingGrounds" xml:space="preserve">
+        <value>Tereny łowieckie</value>
+    </data>
+    <data name="RequiredLevel" xml:space="preserve">
+        <value>Wymagany poziom</value>
+    </data>
+    <data name="OtherRequirements" xml:space="preserve">
+        <value>Inne wymagania</value>
+    </data>
+    <data name="Difficulty" xml:space="preserve">
+        <value>Trudność</value>
+    </data>
+    <data name="Topography" xml:space="preserve">
+        <value>Topografia</value>
+    </data>
+    <data name="SuggestedTypesHere" xml:space="preserve">
+        <value>Sugerowane Typy Tutaj</value>
+    </data>
+    <data name="ExperienceRate" xml:space="preserve">
+        <value>Współczynnik Doświadczenia</value>
+    </data>
+    <data name="ProfitRate" xml:space="preserve">
+        <value>Współczynnik Zysku</value>
+    </data>
+    <data name="OnlyPlayersWithVIPAccount" xml:space="preserve">
+        <value>Tylko gracze z kontem VIP (DACC)</value>
+    </data>
+    <data name="Search" xml:space="preserve">
+        <value>Szukaj</value>
+    </data>
+    <data name="NoMatchingRecordsFound" xml:space="preserve">
+        <value>Nie znaleziono pasujących rekordów</value>
+    </data>
+    <data name="LoadingProcess" xml:space="preserve">
+        <value>Ładowanie...</value>
+    </data>
+    <data name="RowsPerPage" xml:space="preserve">
+        <value>Wiersze na Stronę</value>
+    </data>
+    <data name="Of" xml:space="preserve">
+        <value>z</value>
+    </data>
 </root>

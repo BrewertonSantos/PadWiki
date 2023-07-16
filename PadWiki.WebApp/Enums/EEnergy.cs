@@ -10,35 +10,38 @@ public enum EEnergy
     [Description("Bug")]
     Bug = 0,
     
+    [Description("Dark")]
+    Dark = 1,
+    
     [Description("Dragon")]
-    Dragon = 1,
+    Dragon = 2,
     
     [Description("Electric")]
-    Electric = 2,
+    Electric = 3,
     
     [Description("Fairy")]
-    Fairy = 3,
+    Fairy = 4,
     
     [Description("Fighting")]
-    Fighting = 4,
+    Fighting = 5,
     
     [Description("Fire")]
-    Fire = 5,
+    Fire = 6,
     
     [Description("Flying")]
-    Flying = 6,
+    Flying = 7,
     
     [Description("Ghost")]
-    Ghost = 7,
+    Ghost = 8,
     
     [Description("Grass")]
-    Grass = 8,
+    Grass = 9,
     
     [Description("Ground")]
-    Ground = 9,
+    Ground = 10,
     
     [Description("Ice")]
-    Ice = 10,
+    Ice = 112,
     
     [Description("Normal")]
     Normal = 11,
