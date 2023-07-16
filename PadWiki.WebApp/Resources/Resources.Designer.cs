@@ -123,11 +123,38 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Difficulty.
+        /// </summary>
+        internal static string Difficulty {
+            get {
+                return ResourceManager.GetString("Difficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Experience Rate.
+        /// </summary>
+        internal static string ExperienceRate {
+            get {
+                return ResourceManager.GetString("ExperienceRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hover.
         /// </summary>
         internal static string Hover {
             get {
                 return ResourceManager.GetString("Hover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunting grounds.
+        /// </summary>
+        internal static string HuntingGrounds {
+            get {
+                return ResourceManager.GetString("HuntingGrounds", resourceCulture);
             }
         }
         
@@ -141,6 +168,15 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        internal static string LoadingProcess {
+            get {
+                return ResourceManager.GetString("LoadingProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string Name {
@@ -150,11 +186,101 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No matching records found.
+        /// </summary>
+        internal static string NoMatchingRecordsFound {
+            get {
+                return ResourceManager.GetString("NoMatchingRecordsFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to of.
+        /// </summary>
+        internal static string Of {
+            get {
+                return ResourceManager.GetString("Of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only players with VIP account (DACC).
+        /// </summary>
+        internal static string OnlyPlayersWithVIPAccount {
+            get {
+                return ResourceManager.GetString("OnlyPlayersWithVIPAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other requirements.
+        /// </summary>
+        internal static string OtherRequirements {
+            get {
+                return ResourceManager.GetString("OtherRequirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profit Rate.
+        /// </summary>
+        internal static string ProfitRate {
+            get {
+                return ResourceManager.GetString("ProfitRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required level.
+        /// </summary>
+        internal static string RequiredLevel {
+            get {
+                return ResourceManager.GetString("RequiredLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rows Per Page.
+        /// </summary>
+        internal static string RowsPerPage {
+            get {
+                return ResourceManager.GetString("RowsPerPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Striped.
         /// </summary>
         internal static string Striped {
             get {
                 return ResourceManager.GetString("Striped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suggested Types Here.
+        /// </summary>
+        internal static string SuggestedTypesHere {
+            get {
+                return ResourceManager.GetString("SuggestedTypesHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Topography.
+        /// </summary>
+        internal static string Topography {
+            get {
+                return ResourceManager.GetString("Topography", resourceCulture);
             }
         }
         

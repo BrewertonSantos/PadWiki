@@ -1,0 +1,8 @@
+﻿@font-face {
+    font-family: 'Unown';
+    src: url('/fonts/Unown.ttf') format('truetype');
+}
+
+.unown-text {
+    font-family: 'Unown', Arial, sans-serif;
+}

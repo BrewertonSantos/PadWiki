@@ -16,6 +16,9 @@ public class ResourceText : ValueObject
     #endregion
 
     #region Constructors
+    
+    public ResourceText(string englishUsa)
+        => EnglishUsa = englishUsa;
 
     public ResourceText(
         string englishUsa,
@@ -56,6 +59,8 @@ public class ResourceText : ValueObject
 
         return text.EnglishUsa;
     }
+
+    public static implicit operator ResourceText(string text) => new(text);
 
     #endregion
 }

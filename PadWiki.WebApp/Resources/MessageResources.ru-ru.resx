@@ -1,0 +1,26 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="LocationNotFoundMessage" xml:space="preserve">
+        <value>Место, которое вы ищете, не найдено. Убедитесь, что вы использовали правильные термины. Если вы все еще не можете найти его, наши исследователи еще не завершили свои исследования этого места. В ближайшее время у нас будут доступны информационные материалы, будьте внимательны!</value>
+    </data>
+    <data name="LocationNotFoundTitle" xml:space="preserve">
+        <value>Место не найдено!</value>
+    </data>
+    <data name="TimeToRedirectInSeconds" xml:space="preserve">
+        <value>с до автоматического перенаправления.</value>
+    </data>
+    <data name="RedirectNow" xml:space="preserve">
+        <value>Перенаправить сейчас!</value>
+    </data>
+</root>

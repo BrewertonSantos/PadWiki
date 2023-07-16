@@ -1,0 +1,105 @@
+﻿@page "/map/hunting-grounds/{Slug}"
+@using PadWiki.WebApp.Entities
+@using PadWiki.WebApp.Services.Contracts
+@inject IHuntingGroundService HuntingGroundService
+@inject NavigationManager NavigationManager
+
+<MudPaper id="unique_id_scroll_section" Class="pa-16 ma-2" Style="overflow: auto;" Height="100%">
+    <MudBreadcrumbs Items="_items"></MudBreadcrumbs>
+
+    <MudAlert ContentAlignment="HorizontalAlignment.Center" Icon="@Icons.Material.Filled.Map" Severity="Severity.Normal" Square="true" Variant="Variant.Outlined">@_huntingGround.Title</MudAlert><br/>
+
+    <MudText Align="Align.Center">
+        <MudLink Href="#">Introdução</MudLink>
+        <MudLink Href="#" Typo="Typo.body2">Different Typography</MudLink>
+        <MudLink Href="#" Disabled="true">Disabled link</MudLink>
+    </MudText>
+
+    <MudText Align="Align.Justify">
+        Adentre com cautela nesta caverna envolta em calor e intensidade, pois além das rochas, existem chamas dançantes e rugidos ameaçadores.<br/><br/>
+
+        As paredes revestidas por rochas incandescentes irradiam um brilho avermelhado que parece pulsar com vida própria. O ar carrega um aroma de enxofre e fumaça, enquanto o calor se intensifica a cada passo. Não muito distante, sons de crepitação ecoam, vindo de todas as direções. É como se o próprio fogo estivesse sussurrando suas histórias antigas.<br/><br/>
+
+        As criaturas que habitam este reino de fogo são majestosas e poderosas, com corpos flamejantes que iluminam a escuridão. Suas presenças imponentes evocam respeito e temor, revelando a verdadeira essência dos espíritos ardentes.<br/><br/>
+
+        Entre eles, há indícios de algo ainda mais grandioso, algo que transcende o fogo com sua energia ardente. É dito que um ser lendário reside nesta caverna, uma figura cujo poder flui através de cada chama que envolve seu corpo. Sua energia inigualável revela todo seu esplendor e imponência, sendo um símbolo de força e poder incomparáveis.<br/><br/>
+
+        Mas não se distraia com as figuras imponentes ao seu redor ou com o conto dos selos espirituais. Pois em algum lugar nas profundezas dessa caverna, existe uma fenda entre as rochas que leva a um lugar mágico, repleto de seres extraordinários e hipnotizantes.<br/><br/>
+
+        Em uma clareira secreta, você encontrará um caminho estreito, uma fenda entre as rochas... É aqui que sua aventura começa.<br/><br/>
+    </MudText>
+
+    <MudScrollToTop TopOffset="100"
+                    OnScroll="OnScroll"
+                    Selector="#unique_id_scroll_section"
+                    VisibleCssClass="visible absolute"
+                    HiddenCssClass="invisible">
+        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowUpward" Color="Color">Go to top</MudButton>
+    </MudScrollToTop>
+</MudPaper>
+@* <div id="unique_id_scroll_section" class="ma-0" style="height:300px;overflow: auto;"> *@
+@*     <MudPaper Class="pa-16 ma-2" Outlined="true"> *@
+@* *@
+@*         <MudBreadcrumbs Items="_items"></MudBreadcrumbs> *@
+@* *@
+@*         <MudText Align="Align.Center"><b>Center</b> Lorem ipsum dolor sit amet.</MudText> *@
+@* *@
+@*         Adentre com cautela nesta caverna envolta em calor e intensidade, pois além das rochas, existem chamas dançantes e rugidos ameaçadores. *@
+@* *@
+@*         As paredes revestidas por rochas incandescentes irradiam um brilho avermelhado que parece pulsar com vida própria. O ar carrega um aroma de enxofre e fumaça, enquanto o calor se intensifica a cada passo. Não muito distante, sons de crepitação ecoam, vindo de todas as direções. É como se o próprio fogo estivesse sussurrando suas histórias antigas. *@
+@* *@
+@*         As criaturas que habitam este reino de fogo são majestosas e poderosas, com corpos flamejantes que iluminam a escuridão. Suas presenças imponentes evocam respeito e temor, revelando a verdadeira essência dos espíritos ardentes. *@
+@* *@
+@*         Entre eles, há indícios de algo ainda mais grandioso, algo que transcende o fogo com sua energia ardente. É dito que um ser lendário reside nesta caverna, uma figura cujo poder flui através de cada chama que envolve seu corpo. Sua energia inigualável revela todo seu esplendor e imponência, sendo um símbolo de força e poder incomparáveis. Rumores suspiram pelos corredores ígneos, sussurrando sobre uma figura imponente cujo espírito irradia uma chama inextinguível. *@
+@* *@
+@*         Mas não se distraia com as figuras imponentes ao seu redor ou com o conto dos selos espirituais. Pois em algum lugar nas profundezas dessa caverna, existe uma fenda entre as rochas que leva a um lugar mágico, repleto de seres extraordinários e hipnotizantes. *@
+@* *@
+@*         Em uma clareira secreta, você encontrará um caminho estreito, uma fenda entre as rochas... É aqui que sua aventura começa. *@
+@* *@
+@*         <MudScrollToTop TopOffset="100" *@
+@*                         OnScroll="OnScroll" *@
+@*                         Selector="#unique_id_scroll_section" *@
+@*                         VisibleCssClass="visible absolute" *@
+@*                         HiddenCssClass="invisible"> *@
+@*             <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowUpward" Color="Color">Go to top</MudButton> *@
+@*         </MudScrollToTop> *@
+@*     </MudPaper> *@
+@* </div> *@
+
+@code {
+    private HuntingGround _huntingGround;
+
+    [Parameter]
+    public string? Slug { get; set; }
+
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+    {
+        new("Main Page", href: "/", icon: null),
+        new("Journey", href: null, disabled: true, icon: null),
+        new("PAPOI Psychic Hideout", href: null, disabled: true, icon: null)
+    };
+
+    Color Color = Color.Success;
+
+    private void OnScroll(ScrollEventArgs e)
+    {
+        Color = (e.FirstChildBoundingClientRect.Top * -1) switch
+        {
+            var x when x < 500 => Color.Primary,
+            var x when x < 1500 => Color.Secondary,
+            var x when x < 2500 => Color.Tertiary,
+            _=>Color.Error
+            };
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _huntingGround = HuntingGroundService.GetBySlug(Slug);
+
+        if (_huntingGround is null)
+            NavigationManager.NavigateTo("/location-not-found");
+    }
+
+}
