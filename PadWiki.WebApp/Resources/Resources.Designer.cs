@@ -60,6 +60,24 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abilities.
+        /// </summary>
+        internal static string Abilities {
+            get {
+                return ResourceManager.GetString("Abilities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Achievements.
+        /// </summary>
+        internal static string Achievements {
+            get {
+                return ResourceManager.GetString("Achievements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ago.
         /// </summary>
         internal static string Ago {
@@ -69,11 +87,47 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        internal static string All {
+            get {
+                return ResourceManager.GetString("All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All achievements.
+        /// </summary>
+        internal static string AllAchievements {
+            get {
+                return ResourceManager.GetString("AllAchievements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All items.
+        /// </summary>
+        internal static string AllItems {
+            get {
+                return ResourceManager.GetString("AllItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to and.
         /// </summary>
         internal static string And {
             get {
                 return ResourceManager.GetString("And", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Baits.
+        /// </summary>
+        internal static string Baits {
+            get {
+                return ResourceManager.GetString("Baits", resourceCulture);
             }
         }
         
@@ -96,11 +150,56 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Boxes.
+        /// </summary>
+        internal static string Boxes {
+            get {
+                return ResourceManager.GetString("Boxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cards.
+        /// </summary>
+        internal static string Cards {
+            get {
+                return ResourceManager.GetString("Cards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charms.
+        /// </summary>
+        internal static string Charms {
+            get {
+                return ResourceManager.GetString("Charms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commands.
+        /// </summary>
+        internal static string Commands {
+            get {
+                return ResourceManager.GetString("Commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cooldown.
         /// </summary>
         internal static string Cooldown {
             get {
                 return ResourceManager.GetString("Cooldown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creatures.
+        /// </summary>
+        internal static string Creatures {
+            get {
+                return ResourceManager.GetString("Creatures", resourceCulture);
             }
         }
         
@@ -141,6 +240,15 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Houses.
+        /// </summary>
+        internal static string Houses {
+            get {
+                return ResourceManager.GetString("Houses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hover.
         /// </summary>
         internal static string Hover {
@@ -168,11 +276,38 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        internal static string Items {
+            get {
+                return ResourceManager.GetString("Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         internal static string LoadingProcess {
             get {
                 return ResourceManager.GetString("LoadingProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous.
+        /// </summary>
+        internal static string Miscellaneous {
+            get {
+                return ResourceManager.GetString("Miscellaneous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moves.
+        /// </summary>
+        internal static string Moves {
+            get {
+                return ResourceManager.GetString("Moves", resourceCulture);
             }
         }
         
@@ -222,11 +357,29 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pokémon.
+        /// </summary>
+        internal static string Pokemon {
+            get {
+                return ResourceManager.GetString("Pokemon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profit Rate.
         /// </summary>
         internal static string ProfitRate {
             get {
                 return ResourceManager.GetString("ProfitRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quests.
+        /// </summary>
+        internal static string Quests {
+            get {
+                return ResourceManager.GetString("Quests", resourceCulture);
             }
         }
         
@@ -272,6 +425,15 @@ namespace PadWiki.WebApp.Resources {
         internal static string SuggestedTypesHere {
             get {
                 return ResourceManager.GetString("SuggestedTypesHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TMs.
+        /// </summary>
+        internal static string TMs {
+            get {
+                return ResourceManager.GetString("TMs", resourceCulture);
             }
         }
         

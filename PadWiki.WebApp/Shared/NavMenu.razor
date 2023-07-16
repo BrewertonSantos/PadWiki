@@ -1,16 +1,32 @@
-﻿<MudNavMenu>
-    <MudNavLink Href="" Match="NavLinkMatch.All">Home</MudNavLink>
-    <MudNavGroup Title="Items" Expanded="false">
-        <MudNavLink Href="/charms">Charms</MudNavLink>
-        @* <MudNavGroup Title="Level 1" Icon="@Icons.Material.Filled.AdminPanelSettings" Expanded="true"> *@
-        @*     <MudNavGroup Title="Level 2" Icon="@Icons.Material.Filled.People" Expanded="true"> *@
-        @*         <MudNavGroup Title="Level 3" Icon="@Icons.Material.Filled.Lock" Expanded="true"> *@
-        @*             <MudNavLink Href="/delete" Icon="@Icons.Material.Filled.DeleteForever">Delete Password</MudNavLink> *@
-        @*         </MudNavGroup> *@
-        @*     </MudNavGroup> *@
-        @* </MudNavGroup> *@
+﻿@using PadWiki.WebApp.Resources
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
+    <MudNavGroup Title="@Resources.Achievements" Expanded="false">
+        <MudNavLink Disabled="true" Href="#">@Resources.AllAchievements</MudNavLink>
+        <hr/>
+        <MudNavLink Disabled="true" Href="#">@Resources.Achievements</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Cards</MudNavLink>
+    </MudNavGroup>
+    <MudNavGroup Title="@Resources.Items" Expanded="false">
+        <MudNavLink Disabled="true" Href="#">@Resources.AllItems</MudNavLink>
+        <hr/>
+        <MudNavLink Disabled="true" Href="#">@Resources.Baits</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Boxes</MudNavLink>
+        <MudNavLink Href="/charms">@Resources.Charms</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.TMs</MudNavLink>
     </MudNavGroup>
     <MudNavGroup Title="Map" Expanded="false">
-        <MudNavLink Href="/map/hunting-grounds">Hunting Grounds</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Houses</MudNavLink>
+        <MudNavLink Href="/hunting-grounds">@Resources.HuntingGrounds</MudNavLink>
+    </MudNavGroup>
+    <MudNavGroup Title="@Resources.Miscellaneous" Expanded="false">
+        <MudNavLink Disabled="true" Href="#">@Resources.Abilities</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Commands</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Moves</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Quests</MudNavLink>
+    </MudNavGroup>
+    <MudNavGroup Title="@Resources.Creatures" Expanded="false">
+        <MudNavLink Disabled="true" Href="#">NPCs</MudNavLink>
+        <MudNavLink Disabled="true" Href="#">@Resources.Pokemon</MudNavLink>
     </MudNavGroup>
 </MudNavMenu>

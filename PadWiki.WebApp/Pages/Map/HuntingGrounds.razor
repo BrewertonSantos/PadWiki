@@ -1,4 +1,4 @@
-﻿@page "/map/hunting-grounds"
+﻿@page "/hunting-grounds"
 @using PadWiki.WebApp.Resources
 @using PadWiki.WebApp.Entities
 @using PadWiki.WebApp.Services.Contracts
@@ -42,7 +42,7 @@
             </MudTh>
         </HeaderContent>
         <RowTemplate>
-            <MudTd DataLabel="Name"><MudLink Href="@($"/map/hunting-grounds/{context.Slug}")">@context.Title</MudLink></MudTd>
+            <MudTd DataLabel="Name"><MudLink Href="@($"/hunting-grounds/{context.Slug}")">@context.Title</MudLink></MudTd>
             <MudTd DataLabel="RequiredLevel">@context.RequiredLevel</MudTd>
             <MudTd DataLabel="SuggestedTypesHere">
                 @foreach (var energy in context.SuggestedTypesHere)

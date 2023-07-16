@@ -92,4 +92,58 @@
     <data name="And" xml:space="preserve">
         <value>e</value>
     </data>
+    <data name="Pokemon" xml:space="preserve">
+        <value>Pokémon</value>
+    </data>
+    <data name="Creatures" xml:space="preserve">
+        <value>Criaturas</value>
+    </data>
+    <data name="Houses" xml:space="preserve">
+        <value>Casas</value>
+    </data>
+    <data name="All" xml:space="preserve">
+        <value>Todos</value>
+    </data>
+    <data name="AllItems" xml:space="preserve">
+        <value>Todos os itens</value>
+    </data>
+    <data name="Items" xml:space="preserve">
+        <value>Itens</value>
+    </data>
+    <data name="Baits" xml:space="preserve">
+        <value>Iscas</value>
+    </data>
+    <data name="Charms" xml:space="preserve">
+        <value>Amuletos</value>
+    </data>
+    <data name="Boxes" xml:space="preserve">
+        <value>Caixas</value>
+    </data>
+    <data name="TMs" xml:space="preserve">
+        <value>TMs</value>
+    </data>
+    <data name="Achievements" xml:space="preserve">
+        <value>Conquistas</value>
+    </data>
+    <data name="AllAchievements" xml:space="preserve">
+        <value>Todas as conquistas</value>
+    </data>
+    <data name="Cards" xml:space="preserve">
+        <value>Cartas</value>
+    </data>
+    <data name="Moves" xml:space="preserve">
+        <value>Golpes</value>
+    </data>
+    <data name="Miscellaneous" xml:space="preserve">
+        <value>Diversos</value>
+    </data>
+    <data name="Abilities" xml:space="preserve">
+        <value>Habilidades</value>
+    </data>
+    <data name="Quests" xml:space="preserve">
+        <value>Missões</value>
+    </data>
+    <data name="Commands" xml:space="preserve">
+        <value>Comandos</value>
+    </data>
 </root>

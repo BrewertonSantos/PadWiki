@@ -92,4 +92,58 @@
     <data name="And" xml:space="preserve">
         <value>и</value>
     </data>
+    <data name="Pokemon" xml:space="preserve">
+        <value>Покемон</value>
+    </data>
+    <data name="Creatures" xml:space="preserve">
+        <value>Criaturas</value>
+    </data>
+    <data name="Houses" xml:space="preserve">
+        <value>Дома</value>
+    </data>
+    <data name="All" xml:space="preserve">
+        <value>Все</value>
+    </data>
+    <data name="AllItems" xml:space="preserve">
+        <value>Все предметы</value>
+    </data>
+    <data name="Items" xml:space="preserve">
+        <value>Предметы</value>
+    </data>
+    <data name="Baits" xml:space="preserve">
+        <value>Приманки</value>
+    </data>
+    <data name="Charms" xml:space="preserve">
+        <value>Обереги</value>
+    </data>
+    <data name="Boxes" xml:space="preserve">
+        <value>Коробки</value>
+    </data>
+    <data name="TMs" xml:space="preserve">
+        <value>ТМы</value>
+    </data>
+    <data name="Achievements" xml:space="preserve">
+        <value>Достижения</value>
+    </data>
+    <data name="AllAchievements" xml:space="preserve">
+        <value>Все достижения</value>
+    </data>
+    <data name="Cards" xml:space="preserve">
+        <value>Карты</value>
+    </data>
+    <data name="Moves" xml:space="preserve">
+        <value>Атаки</value>
+    </data>
+    <data name="Miscellaneous" xml:space="preserve">
+        <value>Разное</value>
+    </data>
+    <data name="Abilities" xml:space="preserve">
+        <value>Способности</value>
+    </data>
+    <data name="Quests" xml:space="preserve">
+        <value>Задания</value>
+    </data>
+    <data name="Commands" xml:space="preserve">
+        <value>Команды</value>
+    </data>
 </root>
