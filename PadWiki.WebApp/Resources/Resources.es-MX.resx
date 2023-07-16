@@ -44,4 +44,10 @@
     <data name="IncommingImprovement" xml:space="preserve">
         <value>Estamos trabajando en actualizar y mejorar la página que estás visitando, brindando próximamente información detallada y precisa sobre el tema.</value>
     </data>
+    <data name="Ago" xml:space="preserve">
+        <value>atrás</value>
+    </data>
+    <data name="And" xml:space="preserve">
+        <value>y</value>
+    </data>
 </root>

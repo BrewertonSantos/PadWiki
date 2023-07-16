@@ -46,6 +46,7 @@
 }
 
 .random-card {
+    font-family: "Kalam", cursive;
     min-width: 300px;
     padding: 1rem 1rem 2rem;
     background: #f8f3e8;
@@ -58,18 +59,15 @@
     aspect-ratio: 600/300;
 }
 
-.random-card > h2 {
-    margin-top: 1rem;
+.random-card > h3 {
     font-family: "Kalam", cursive;
-    font-weight: normal;
-    font-size: 2rem;
     color: #4a4a7d;
     text-align: center;
 }
 
 .random-card > p {
     font-family: "Kalam", cursive;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #5e5e89;
     text-align: center;
 }

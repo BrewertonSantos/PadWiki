@@ -11,14 +11,7 @@
     <MudAlert Severity="Severity.Info">@Resources.IncommingImprovement</MudAlert>
     
     <MudContainer Class="pa-5" Fixed="true">
-        <MudTable Class="text-center" Items="@Elements" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped">
-            <ToolBarContent>
-                <MudSwitch @bind-Checked="@bordered" Color="Color.Tertiary">@Resources.Bordered</MudSwitch>
-                <MudSwitch @bind-Checked="@dense" Color="Color.Primary">@Resources.Dense</MudSwitch>
-                <MudSwitch @bind-Checked="@hover" Color="Color.Warning">@Resources.Hover</MudSwitch>
-                <MudSwitch @bind-Checked="@striped" Color="Color.Secondary">@Resources.Striped</MudSwitch>
-                <MudSpacer/>
-            </ToolBarContent>
+        <MudTable Class="text-center" Items="@Elements" Dense="true" Hover="true" Bordered="false" Striped="true">
             <HeaderContent>
                 <MudTh></MudTh>
                 <MudTh Style="text-align: center; font-weight: bold;">@Resources.Name</MudTh>
@@ -74,14 +67,8 @@
 </MudPaper>
 
 @code {
-    private bool dense = true;
-    private bool hover = true;
-    private bool striped = true;
-    private bool bordered = true;
-
     private IEnumerable<Charm> Elements = new List<Charm>();
 
     protected override async Task OnInitializedAsync()
         => Elements = _charmService.Charms;
-
 }

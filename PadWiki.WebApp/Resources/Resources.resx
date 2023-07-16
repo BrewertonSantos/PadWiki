@@ -150,4 +150,10 @@
   <data name="IncommingImprovement" xml:space="preserve">
     <value>We will be working on updating and enhancing the page you are currently visiting, providing soon detailed and accurate information on the subject.</value>
   </data>
+  <data name="Ago" xml:space="preserve">
+    <value />
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>and</value>
+  </data>
 </root>
