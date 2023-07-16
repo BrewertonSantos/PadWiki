@@ -85,5 +85,10 @@
     </data>
     <data name="Of" xml:space="preserve">
         <value>de</value>
+    <data name="Ago" xml:space="preserve">
+        <value>atrás</value>
+    </data>
+    <data name="And" xml:space="preserve">
+        <value>y</value>
     </data>
 </root>

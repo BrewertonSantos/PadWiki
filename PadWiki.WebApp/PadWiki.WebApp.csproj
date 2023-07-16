@@ -101,6 +101,7 @@
 	  <EmbeddedResource Update="Resources\BoostsResources.ru-RU.resx">
 	    <DependentUpon>BoostsResources.resx</DependentUpon>
 	  </EmbeddedResource>
+<!-- hunts-page -->
 	  <EmbeddedResource Update="Resources\MessageResources.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>MessageResources.Designer.cs</LastGenOutput>
@@ -143,8 +144,8 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>EnergiesResources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
+<!-- end hunts page -->
 	</ItemGroup>
-	
 	<ItemGroup>
 	  <Compile Update="Resources\EnumResources.Designer.cs">
 	    <DesignTime>True</DesignTime>
