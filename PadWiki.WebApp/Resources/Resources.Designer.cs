@@ -60,7 +60,7 @@ namespace PadWiki.WebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to ago.
         /// </summary>
         internal static string Ago {
             get {

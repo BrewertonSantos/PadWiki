@@ -191,8 +191,9 @@
   </data>
   <data name="Of" xml:space="preserve">
     <value>of</value>
+  </data>
   <data name="Ago" xml:space="preserve">
-    <value />
+    <value>ago</value>
   </data>
   <data name="And" xml:space="preserve">
     <value>and</value>

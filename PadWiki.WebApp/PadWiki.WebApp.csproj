@@ -101,7 +101,6 @@
 	  <EmbeddedResource Update="Resources\BoostsResources.ru-RU.resx">
 	    <DependentUpon>BoostsResources.resx</DependentUpon>
 	  </EmbeddedResource>
-<!-- hunts-page -->
 	  <EmbeddedResource Update="Resources\MessageResources.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>MessageResources.Designer.cs</LastGenOutput>
@@ -144,7 +143,21 @@
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>EnergiesResources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
-<!-- end hunts page -->
+	  <EmbeddedResource Update="Resources\EnergiesResources.es-mx.resx">
+	    <DependentUpon>EnergiesResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnergiesResources.pl-pl.resx">
+	    <DependentUpon>EnergiesResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnergiesResources.pt-br.resx">
+	    <DependentUpon>EnergiesResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnergiesResources.pt-pt.resx">
+	    <DependentUpon>EnergiesResources.resx</DependentUpon>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\EnergiesResources.ru-ru.resx">
+	    <DependentUpon>EnergiesResources.resx</DependentUpon>
+	  </EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="Resources\EnumResources.Designer.cs">
@@ -183,7 +196,6 @@
 	    <DependentUpon>EnergiesResources.resx</DependentUpon>
 	  </Compile>
 	</ItemGroup>
-	
 	<ItemGroup>
 	  <_ContentIncludedByDefault Remove="Components\Energy.razor" />
 	</ItemGroup>
